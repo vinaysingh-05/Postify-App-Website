@@ -237,3 +237,8 @@ body {
 
 .animate-spin-conic { animation: spin 2s linear infinite; }
 .animate-spin-conic-slow { animation: spin 4s linear infinite; }
+
+/* Smooth scroll behavior */
+html {
+    scroll-behavior: smooth;
+}

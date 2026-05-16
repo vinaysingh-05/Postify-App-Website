@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -84,7 +84,7 @@
 
 <<!-- ================= PREMIUM NAVBAR ================= -->
 
-<nav style="
+<nav id="navbar" style="
 position:fixed;
 top:0;
 left:0;
@@ -145,55 +145,60 @@ box-shadow:0 0 30px rgba(0,217,255,0.08);
         gap:2rem;
         ">
 
-            <a href="#features" style="
+            <a href="#" data-scroll="features" style="
             color:#cbd5e1;
             text-decoration:none;
             font-size:0.95rem;
             transition:0.3s;
+            cursor:pointer;
             "
             onmouseover="this.style.color='#00d9ff'"
             onmouseout="this.style.color='#cbd5e1'">
                 Features
             </a>
 
-            <a href="#premium" style="
+            <a href="#" data-scroll="premium" style="
             color:#cbd5e1;
             text-decoration:none;
             font-size:0.95rem;
             transition:0.3s;
+            cursor:pointer;
             "
             onmouseover="this.style.color='#00d9ff'"
             onmouseout="this.style.color='#cbd5e1'">
                 Premium
             </a>
 
-            <a href="#screenshots" style="
+            <a href="#" data-scroll="screenshots" style="
             color:#cbd5e1;
             text-decoration:none;
             font-size:0.95rem;
             transition:0.3s;
+            cursor:pointer;
             "
             onmouseover="this.style.color='#00d9ff'"
             onmouseout="this.style.color='#cbd5e1'">
                 Screenshots
             </a>
 
-            <a href="#community" style="
+            <a href="#" data-scroll="community" style="
             color:#cbd5e1;
             text-decoration:none;
             font-size:0.95rem;
             transition:0.3s;
+            cursor:pointer;
             "
             onmouseover="this.style.color='#00d9ff'"
             onmouseout="this.style.color='#cbd5e1'">
                 Community
             </a>
 
-            <a href="#download" style="
+            <a href="#" data-scroll="download" style="
             color:#cbd5e1;
             text-decoration:none;
             font-size:0.95rem;
             transition:0.3s;
+            cursor:pointer;
             "
             onmouseover="this.style.color='#00d9ff'"
             onmouseout="this.style.color='#cbd5e1'">
@@ -202,8 +207,10 @@ box-shadow:0 0 30px rgba(0,217,255,0.08);
 
         </div>
 
+
+
         <!-- DOWNLOAD BUTTON -->
-        <a href="#download" style="
+        <a href="#" data-scroll="download" style="
         background:#00d9ff;
         color:#000;
         text-decoration:none;
@@ -250,10 +257,10 @@ box-shadow:0 0 30px rgba(0,217,255,0.08);
                 </p>
 
                 <div style="display:flex;flex-wrap:wrap;align-items:center;gap:1rem;">
-                    <a href="#download" style="background:#fff;color:#000;padding:1rem 2rem;border-radius:9999px;font-weight:500;text-decoration:none;display:flex;align-items:center;gap:0.5rem;box-shadow:0 0 20px rgba(255,255,255,0.2);transition:transform 0.2s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                    <a href="#" data-scroll="download" style="background:#fff;color:#000;padding:1rem 2rem;border-radius:9999px;font-weight:500;text-decoration:none;display:flex;align-items:center;gap:0.5rem;box-shadow:0 0 20px rgba(255,255,255,0.2);transition:transform 0.2s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
                         <i class="ph ph-download-simple" style="font-size:1.25rem;"></i> Download APK
                     </a>
-                    <a href="#features" style="padding:1rem 2rem;border-radius:9999px;font-weight:500;color:#fff;text-decoration:none;display:flex;align-items:center;gap:0.5rem;transition:background 0.2s;" class="glass-panel" onmouseover="this.style.background='rgba(255,255,255,0.1)'" onmouseout="this.style.background=''">
+                    <a href="#" data-scroll="features" style="padding:1rem 2rem;border-radius:9999px;font-weight:500;color:#fff;text-decoration:none;display:flex;align-items:center;gap:0.5rem;transition:background 0.2s;" class="glass-panel" onmouseover="this.style.background='rgba(255,255,255,0.1)'" onmouseout="this.style.background=''">
                         Watch Preview <i class="ph ph-play-circle" style="font-size:1.25rem;"></i>
                     </a>
                 </div>
@@ -398,7 +405,7 @@ box-shadow:0 0 30px rgba(0,217,255,0.08);
     </section>
 
     <!-- ======= FEATURE: NO FOLLOWER COUNTS ======= -->
-    <section style="padding:6rem 1.5rem;position:relative;z-index:10;">
+    <section id="premium" style="padding:6rem 1.5rem;position:relative;z-index:10;">
         <div class="max-w-7xl mx-auto" style="display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;">
             <div style="text-align:left;" class="reveal">
                 <h2 style="font-size:clamp(2rem,4vw,3rem);font-family:'Poppins',sans-serif;font-weight:700;margin-bottom:1.5rem;">No Follower Counts.<br><span class="text-gradient">Just You.</span></h2>
@@ -446,7 +453,7 @@ box-shadow:0 0 30px rgba(0,217,255,0.08);
     </section>
 
     <!-- ======= FEATURE: ZEN SPACE ======= -->
-    <section style="padding:6rem 1.5rem;position:relative;z-index:10;overflow:hidden;">
+    <section id="screenshots" style="padding:6rem 1.5rem;position:relative;z-index:10;overflow:hidden;">
         <div class="max-w-7xl mx-auto" style="display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;">
             <div style="text-align:left;" class="reveal">
                 <h2 style="font-size:clamp(2rem,4vw,3rem);font-family:'Poppins',sans-serif;font-weight:700;margin-bottom:1.5rem;">Your Digital<br><span class="text-gradient-cyan">Sanctuary.</span></h2>
@@ -1069,79 +1076,168 @@ border-top:1px solid rgba(255,255,255,0.1);
                 </div>
                 <p style="font-size:0.875rem;color:#64748b;margin-bottom:1.5rem;">Designing a safer, quieter, and more beautiful digital world for everyone.</p>
                 <div style="display:flex;gap:1rem;">
-                    <a href="#" style="color:#94a3b8;text-decoration:none;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#94a3b8'"><i class="ph ph-twitter-logo" style="font-size:1.25rem;"></i></a>
-                    <a href="#" style="color:#94a3b8;text-decoration:none;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#94a3b8'"><i class="ph ph-instagram-logo" style="font-size:1.25rem;"></i></a>
+                    <a href="https://github.com/vinaysingh-05/" target="_blank" rel="noopener noreferrer" style="color:#94a3b8;text-decoration:none;transition:all 0.3s;" onmouseover="this.style.color='#00d9ff';this.style.transform='scale(1.2)'" onmouseout="this.style.color='#94a3b8';this.style.transform='scale(1)'"><i class="ph ph-github-logo" style="font-size:1.5rem;"></i></a>
+                    <a href="https://www.linkedin.com/in/vinay-kumar0805/" target="_blank" rel="noopener noreferrer" style="color:#94a3b8;text-decoration:none;transition:all 0.3s;" onmouseover="this.style.color='#00d9ff';this.style.transform='scale(1.2)'" onmouseout="this.style.color='#94a3b8';this.style.transform='scale(1)'"><i class="ph ph-linkedin-logo" style="font-size:1.5rem;"></i></a>
+                    <a href="https://x.com/vinaykumar18005" target="_blank" rel="noopener noreferrer" style="color:#94a3b8;text-decoration:none;transition:all 0.3s;" onmouseover="this.style.color='#00d9ff';this.style.transform='scale(1.2)'" onmouseout="this.style.color='#94a3b8';this.style.transform='scale(1)'"><i class="ph ph-x-logo" style="font-size:1.5rem;"></i></a>
                 </div>
             </div>
             <div>
                 <h4 style="font-weight:600;margin-bottom:1rem;color:#fff;">Product</h4>
                 <ul style="list-style:none;padding:0;display:flex;flex-direction:column;gap:0.5rem;font-size:0.875rem;">
-                    <li><a href="#features" style="color:#94a3b8;text-decoration:none;" onmouseover="this.style.color='#00d9ff'" onmouseout="this.style.color='#94a3b8'">Features</a></li>
-                    <li><a href="#premium" style="color:#94a3b8;text-decoration:none;" onmouseover="this.style.color='#00d9ff'" onmouseout="this.style.color='#94a3b8'">Premium</a></li>
-                    <li><a href="#download" style="color:#94a3b8;text-decoration:none;" onmouseover="this.style.color='#00d9ff'" onmouseout="this.style.color='#94a3b8'">Download</a></li>
+                    <li><a href="#" onclick="openPopup('features-popup'); return false;" style="color:#94a3b8;text-decoration:none;cursor:pointer;" onmouseover="this.style.color='#00d9ff'" onmouseout="this.style.color='#94a3b8'">Features</a></li>
+                    <li><a href="#" onclick="openPopup('premium-popup'); return false;" style="color:#94a3b8;text-decoration:none;cursor:pointer;" onmouseover="this.style.color='#00d9ff'" onmouseout="this.style.color='#94a3b8'">Premium</a></li>
+                    <li><a href="#" onclick="openPopup('download-popup'); return false;" style="color:#94a3b8;text-decoration:none;cursor:pointer;" onmouseover="this.style.color='#00d9ff'" onmouseout="this.style.color='#94a3b8'">Download</a></li>
                 </ul>
             </div>
             <div>
                 <h4 style="font-weight:600;margin-bottom:1rem;color:#fff;">Company</h4>
                 <ul style="list-style:none;padding:0;display:flex;flex-direction:column;gap:0.5rem;font-size:0.875rem;">
-                    <li><a href="#" onclick="openModal('modal-company')" style="color:#94a3b8;text-decoration:none;" onmouseover="this.style.color='#00d9ff'" onmouseout="this.style.color='#94a3b8'">About Us</a></li>
-                    <li><a href="#" style="color:#94a3b8;text-decoration:none;" onmouseover="this.style.color='#00d9ff'" onmouseout="this.style.color='#94a3b8'">Careers</a></li>
-                    <li><a href="#" style="color:#94a3b8;text-decoration:none;" onmouseover="this.style.color='#00d9ff'" onmouseout="this.style.color='#94a3b8'">Contact</a></li>
+                    <li><a href="#" onclick="openPopup('about-popup'); return false;" style="color:#94a3b8;text-decoration:none;" onmouseover="this.style.color='#00d9ff'" onmouseout="this.style.color='#94a3b8'">About Us</a></li>
+                    <li><a href="#" onclick="openPopup('careers-popup'); return false;" style="color:#94a3b8;text-decoration:none;" onmouseover="this.style.color='#00d9ff'" onmouseout="this.style.color='#94a3b8'">Careers</a></li>
+                    <li><a href="#" onclick="openPopup('contact-popup'); return false;" style="color:#94a3b8;text-decoration:none;" onmouseover="this.style.color='#00d9ff'" onmouseout="this.style.color='#94a3b8'">Contact</a></li>
                 </ul>
             </div>
             <div>
                 <h4 style="font-weight:600;margin-bottom:1rem;color:#fff;">Legal</h4>
                 <ul style="list-style:none;padding:0;display:flex;flex-direction:column;gap:0.5rem;font-size:0.875rem;">
-                    <li><a href="#" onclick="openModal('modal-legal')" style="color:#94a3b8;text-decoration:none;" onmouseover="this.style.color='#00d9ff'" onmouseout="this.style.color='#94a3b8'">Privacy Policy</a></li>
-                    <li><a href="#" onclick="openModal('modal-legal')" style="color:#94a3b8;text-decoration:none;" onmouseover="this.style.color='#00d9ff'" onmouseout="this.style.color='#94a3b8'">Terms of Service</a></li>
+                    <li><a href="#" onclick="openPopup('privacy-popup'); return false;" style="color:#94a3b8;text-decoration:none;" onmouseover="this.style.color='#00d9ff'" onmouseout="this.style.color='#94a3b8'">Privacy Policy</a></li>
+                    <li><a href="#" onclick="openPopup('terms-popup'); return false;" style="color:#94a3b8;text-decoration:none;" onmouseover="this.style.color='#00d9ff'" onmouseout="this.style.color='#94a3b8'">Terms of Service</a></li>
                 </ul>
             </div>
         </div>
         <div class="max-w-7xl mx-auto" style="text-align:center;font-size:0.75rem;color:#475569;border-top:1px solid rgba(255,255,255,0.05);padding-top:2rem;">
-            &copy; 2026 Postify Inc. Handcrafted in California.
+            &copy; 2026 Postify Inc. Handcrafted in delhi .
         </div>
     </footer>
 
-    <!-- ======= MODALS ======= -->
-    <div id="modal-overlay" class="hidden opacity-0" style="position:fixed;inset:0;background:rgba(0,0,0,0.6);backdrop-filter:blur(4px);z-index:50;transition:opacity 0.3s;display:none;align-items:center;justify-content:center;padding:1rem;">
-
-        <!-- Company Modal -->
-        <div id="modal-company" class="modal-content hidden scale-95" style="background:#0f172a;border:1px solid rgba(0,217,255,0.2);border-radius:1.5rem;width:100%;max-width:32rem;box-shadow:0 0 50px rgba(138,190,224,0.1);transform:scale(0.95);transition:transform 0.3s;overflow:hidden;position:relative;">
-            <div style="position:absolute;top:0;right:0;width:8rem;height:8rem;background:rgba(0,217,255,0.1);filter:blur(3rem);border-radius:50%;"></div>
-            <div style="padding:2rem;">
-                <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1.5rem;">
-                    <h3 style="font-size:1.5rem;font-family:'Poppins',sans-serif;font-weight:700;">About Postify</h3>
-                    <button onclick="closeModal()" style="color:#94a3b8;background:transparent;border:none;cursor:pointer;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#94a3b8'"><i class="ph ph-x" style="font-size:1.25rem;"></i></button>
-                </div>
-                <div style="display:flex;flex-direction:column;gap:1rem;color:#cbd5e1;font-size:0.875rem;line-height:1.75;">
-                    <p>Founded by ex-engineers from major social networks, Postify was born out of frustration with toxic algorithms and engagement-baiting mechanics.</p>
-                    <p>We are a small, independent team funded by users, not advertisers. Our mission is to build software that respects your attention and protects your peace.</p>
-                    <div class="glass-panel" style="margin-top:1.5rem;padding:1rem;border-radius:0.75rem;border-left:2px solid #00d9ff;">
-                        <p style="font-weight:500;color:#fff;margin-bottom:0.25rem;">Current Status</p>
-                        <p style="font-size:0.75rem;color:#00d9ff;">All systems operational. Beta Phase 2.</p>
-                    </div>
-                </div>
-            </div>
+    <!-- ======= FOOTER POPUPS ======= -->
+    <div id="popup-overlay" style="position:fixed;inset:0;background:rgba(0,0,0,0.7);backdrop-filter:blur(4px);z-index:40;display:none;align-items:center;justify-content:center;padding:1rem;overflow-y:auto;" onclick="closeAllPopups()">
+        
+        <!-- Features Popup -->
+        <div id="features-popup" class="popup-content" style="background:#0f172a;border:1px solid rgba(0,217,255,0.3);border-radius:1.5rem;width:100%;max-width:600px;box-shadow:0 0 50px rgba(0,217,255,0.2);padding:2rem;position:relative;max-height:80vh;overflow-y:auto;display:none;" onclick="event.stopPropagation()">
+            <button onclick="closeAllPopups()" style="position:absolute;top:1rem;right:1rem;background:rgba(0,217,255,0.1);border:1px solid rgba(0,217,255,0.3);color:#00d9ff;width:2rem;height:2rem;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1.25rem;"><i class="ph ph-x"></i></button>
+            <h2 style="color:#00d9ff;margin-bottom:1rem;font-size:1.75rem;">✨ Features</h2>
+            <p style="color:#cbd5e1;margin-bottom:1rem;line-height:1.6;">Postify redefines social media with features designed for peace and authenticity:</p>
+            <ul style="color:#94a3b8;margin-bottom:1rem;padding-left:1.5rem;">
+                <li style="margin-bottom:0.75rem;"><strong style="color:#00d9ff;">No Comments, No Debate</strong> - Share your thoughts freely without judgment or criticism</li>
+                <li style="margin-bottom:0.75rem;"><strong style="color:#00d9ff;">No Follower Counts</strong> - Post for yourself, not for metrics</li>
+                <li style="margin-bottom:0.75rem;"><strong style="color:#00d9ff;">Dark Mode by Design</strong> - Reduces eye strain and creates a calming environment</li>
+                <li style="margin-bottom:0.75rem;"><strong style="color:#00d9ff;">Toxic-Free Algorithm</strong> - No engagement manipulation or rage content</li>
+                <li style="margin-bottom:0.75rem;"><strong style="color:#00d9ff;">Memory Timeline</strong> - Your posts are memories, not metrics</li>
+            </ul>
         </div>
 
-        <!-- Legal Modal -->
-        <div id="modal-legal" class="modal-content hidden scale-95" style="background:#0f172a;border:1px solid rgba(0,217,255,0.2);border-radius:1.5rem;width:100%;max-width:42rem;box-shadow:0 0 50px rgba(138,190,224,0.1);transform:scale(0.95);transition:transform 0.3s;overflow:hidden;position:relative;display:flex;flex-direction:column;max-height:80vh;">
-            <div style="padding:1.5rem;border-bottom:1px solid rgba(255,255,255,0.1);display:flex;justify-content:space-between;align-items:center;background:rgba(5,8,22,0.5);">
-                <h3 style="font-size:1.25rem;font-family:'Poppins',sans-serif;font-weight:700;">Legal Documents</h3>
-                <button onclick="closeModal()" style="color:#94a3b8;background:transparent;border:none;cursor:pointer;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#94a3b8'"><i class="ph ph-x" style="font-size:1.25rem;"></i></button>
+        <!-- Premium Popup -->
+        <div id="premium-popup" class="popup-content" style="background:#0f172a;border:1px solid rgba(0,217,255,0.3);border-radius:1.5rem;width:100%;max-width:600px;box-shadow:0 0 50px rgba(0,217,255,0.2);padding:2rem;position:relative;max-height:80vh;overflow-y:auto;display:none;" onclick="event.stopPropagation()">
+            <button onclick="closeAllPopups()" style="position:absolute;top:1rem;right:1rem;background:rgba(0,217,255,0.1);border:1px solid rgba(0,217,255,0.3);color:#00d9ff;width:2rem;height:2rem;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1.25rem;"><i class="ph ph-x"></i></button>
+            <h2 style="color:#00d9ff;margin-bottom:1rem;font-size:1.75rem;">💎 Premium Experience</h2>
+            <p style="color:#cbd5e1;margin-bottom:1rem;line-height:1.6;">Postify Premium unlocks exclusive features for deeper connection:</p>
+            <ul style="color:#94a3b8;margin-bottom:1rem;padding-left:1.5rem;">
+                <li style="margin-bottom:0.75rem;"><strong style="color:#00d9ff;">Early Access</strong> - Try new features before everyone else</li>
+                <li style="margin-bottom:0.75rem;"><strong style="color:#00d9ff;">Custom Themes</strong> - Personalize your space with exclusive color palettes</li>
+                <li style="margin-bottom:0.75rem;"><strong style="color:#00d9ff;">Advanced Privacy</strong> - Control who sees your memories in real-time</li>
+                <li style="margin-bottom:0.75rem;"><strong style="color:#00d9ff;">Export Memories</strong> - Download your life as a beautiful PDF archive</li>
+                <li style="margin-bottom:0.75rem;"><strong style="color:#00d9ff;">Support Creators</strong> - Help keep Postify ad-free and independent</li>
+            </ul>
+            <p style="color:#00d9ff;margin-top:1.5rem;font-weight:600;">$4.99/month • Cancel anytime • 7-day free trial</p>
+        </div>
+
+        <!-- Download Popup -->
+        <div id="download-popup" class="popup-content" style="background:#0f172a;border:1px solid rgba(0,217,255,0.3);border-radius:1.5rem;width:100%;max-width:600px;box-shadow:0 0 50px rgba(0,217,255,0.2);padding:2rem;position:relative;max-height:80vh;overflow-y:auto;display:none;" onclick="event.stopPropagation()">
+            <button onclick="closeAllPopups()" style="position:absolute;top:1rem;right:1rem;background:rgba(0,217,255,0.1);border:1px solid rgba(0,217,255,0.3);color:#00d9ff;width:2rem;height:2rem;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1.25rem;"><i class="ph ph-x"></i></button>
+            <h2 style="color:#00d9ff;margin-bottom:1rem;font-size:1.75rem;">⬇️ Download Postify</h2>
+            <p style="color:#cbd5e1;margin-bottom:1.5rem;line-height:1.6;">Get Postify on your device and start sharing your authentic memories today.</p>
+            <div style="display:flex;flex-direction:column;gap:1rem;margin-bottom:1rem;">
+                <a href="#" style="background:rgba(0,217,255,0.2);border:1px solid rgba(0,217,255,0.5);color:#00d9ff;padding:1rem;border-radius:0.75rem;text-align:center;text-decoration:none;transition:all 0.3s;" onmouseover="this.style.background='rgba(0,217,255,0.3)'" onmouseout="this.style.background='rgba(0,217,255,0.2)'"><i class="ph ph-apple-logo" style="font-size:1.25rem;margin-right:0.5rem;"></i> App Store</a>
+                <a href="#" style="background:rgba(0,217,255,0.2);border:1px solid rgba(0,217,255,0.5);color:#00d9ff;padding:1rem;border-radius:0.75rem;text-align:center;text-decoration:none;transition:all 0.3s;" onmouseover="this.style.background='rgba(0,217,255,0.3)'" onmouseout="this.style.background='rgba(0,217,255,0.2)'"><i class="ph ph-google-play-logo" style="font-size:1.25rem;margin-right:0.5rem;"></i> Google Play</a>
+                <a href="#" style="background:rgba(0,217,255,0.2);border:1px solid rgba(0,217,255,0.5);color:#00d9ff;padding:1rem;border-radius:0.75rem;text-align:center;text-decoration:none;transition:all 0.3s;" onmouseover="this.style.background='rgba(0,217,255,0.3)'" onmouseout="this.style.background='rgba(0,217,255,0.2)'"><i class="ph ph-windows-logo" style="font-size:1.25rem;margin-right:0.5rem;"></i> Windows</a>
             </div>
-            <div style="padding:1.5rem;overflow-y:auto;flex:1;font-size:0.875rem;color:#cbd5e1;display:flex;flex-direction:column;gap:1.5rem;">
-                <section>
-                    <h4 style="color:#fff;font-weight:500;font-size:1.125rem;margin-bottom:0.5rem;">Privacy Policy</h4>
-                    <p style="margin-bottom:0.5rem;">Last updated: May 16, 2026</p>
-                    <p>1. Data Collection: We collect minimal data required to run the service. No third-party trackers are installed in the app.</p>
-                    <p>2. Encryption: All direct messages (if implemented in future) and private posts are end-to-end encrypted.</p>
-                </section>
-                <section>
-                    <h4 style="color:#fff;font-weight:500;font-size:1.125rem;margin-bottom:0.5rem;">Terms & Conditions</h4>
-                    <p>By using Postify, you agree to maintain a positive environment. Any attempt to bypass the 'no comments' rule via image text or coordinated harassment will result in immediate lifetime bans.</p>
-                </section>
+            <p style="color:#64748b;font-size:0.875rem;text-align:center;">Requires iOS 14+, Android 10+, or Windows 10+</p>
+        </div>
+
+        <!-- About Us Popup -->
+        <div id="about-popup" class="popup-content" style="background:#0f172a;border:1px solid rgba(0,217,255,0.3);border-radius:1.5rem;width:100%;max-width:600px;box-shadow:0 0 50px rgba(0,217,255,0.2);padding:2rem;position:relative;max-height:80vh;overflow-y:auto;display:none;" onclick="event.stopPropagation()">
+            <button onclick="closeAllPopups()" style="position:absolute;top:1rem;right:1rem;background:rgba(0,217,255,0.1);border:1px solid rgba(0,217,255,0.3);color:#00d9ff;width:2rem;height:2rem;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1.25rem;"><i class="ph ph-x"></i></button>
+            <h2 style="color:#00d9ff;margin-bottom:1rem;font-size:1.75rem;">🌿 About Postify</h2>
+            <p style="color:#cbd5e1;margin-bottom:1rem;line-height:1.6;">Postify was born from a simple observation: social media doesn't have to be toxic. In 2024, our founder witnessed how traditional platforms prioritize engagement over wellbeing.</p>
+            <p style="color:#cbd5e1;margin-bottom:1rem;line-height:1.6;"><strong style="color:#00d9ff;">Our Mission:</strong> Create a social space where people feel safe, heard, and valued—without the pressure of metrics, judgment, or algorithmic manipulation.</p>
+            <p style="color:#cbd5e1;margin-bottom:1rem;line-height:1.6;"><strong style="color:#00d9ff;">Our Values:</strong> Privacy first. Human-centered design. Transparency. No ads. No data selling. Just a peaceful corner of the internet for authentic connections.</p>
+            <p style="color:#64748b;font-size:0.875rem;">Handcrafted in California by a small team of designers, engineers, and dreamers.</p>
+        </div>
+
+        <!-- Careers Popup -->
+        <div id="careers-popup" class="popup-content" style="background:#0f172a;border:1px solid rgba(0,217,255,0.3);border-radius:1.5rem;width:100%;max-width:600px;box-shadow:0 0 50px rgba(0,217,255,0.2);padding:2rem;position:relative;max-height:80vh;overflow-y:auto;display:none;" onclick="event.stopPropagation()">
+            <button onclick="closeAllPopups()" style="position:absolute;top:1rem;right:1rem;background:rgba(0,217,255,0.1);border:1px solid rgba(0,217,255,0.3);color:#00d9ff;width:2rem;height:2rem;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1.25rem;"><i class="ph ph-x"></i></button>
+            <h2 style="color:#00d9ff;margin-bottom:1rem;font-size:1.75rem;">🚀 Join Our Team</h2>
+            <p style="color:#cbd5e1;margin-bottom:1rem;line-height:1.6;">We're hiring passionate people who believe in our mission to create a healthier internet.</p>
+            <p style="color:#cbd5e1;margin-bottom:1rem;line-height:1.6;"><strong style="color:#00d9ff;">Current Openings:</strong></p>
+            <ul style="color:#94a3b8;margin-bottom:1rem;padding-left:1.5rem;">
+                <li style="margin-bottom:0.5rem;">Senior Full-Stack Engineer</li>
+                <li style="margin-bottom:0.5rem;">Product Designer</li>
+                <li style="margin-bottom:0.5rem;">Community Manager</li>
+                <li style="margin-bottom:0.5rem;">Data Privacy Specialist</li>
+            </ul>
+            <p style="color:#cbd5e1;margin-bottom:1rem;line-height:1.6;"><strong style="color:#00d9ff;">Why Join Us?</strong> Competitive salary. Remote-friendly. Health insurance. Equity. Mission-driven work. Unlimited PTO.</p>
+            <a href="#" style="display:inline-block;background:#00d9ff;color:#000;padding:0.75rem 1.5rem;border-radius:0.5rem;text-decoration:none;font-weight:600;transition:all 0.3s;" onmouseover="this.style.background='#fff'" onmouseout="this.style.background='#00d9ff'">View All Jobs →</a>
+        </div>
+
+        <!-- Contact Popup -->
+        <div id="contact-popup" class="popup-content" style="background:#0f172a;border:1px solid rgba(0,217,255,0.3);border-radius:1.5rem;width:100%;max-width:600px;box-shadow:0 0 50px rgba(0,217,255,0.2);padding:2rem;position:relative;max-height:80vh;overflow-y:auto;display:none;" onclick="event.stopPropagation()">
+            <button onclick="closeAllPopups()" style="position:absolute;top:1rem;right:1rem;background:rgba(0,217,255,0.1);border:1px solid rgba(0,217,255,0.3);color:#00d9ff;width:2rem;height:2rem;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1.25rem;"><i class="ph ph-x"></i></button>
+            <h2 style="color:#00d9ff;margin-bottom:1rem;font-size:1.75rem;">📮 Get in Touch</h2>
+            <p style="color:#cbd5e1;margin-bottom:1.5rem;line-height:1.6;">Have questions, feedback, or just want to say hello? We'd love to hear from you.</p>
+            <div style="display:flex;flex-direction:column;gap:1rem;margin-bottom:1.5rem;">
+                <div style="color:#cbd5e1;">
+                    <p style="color:#00d9ff;font-weight:600;margin-bottom:0.25rem;">📧 Email</p>
+                    <a href="mailto:hello@postify.app" style="color:#94a3b8;text-decoration:none;" onmouseover="this.style.color='#00d9ff'" onmouseout="this.style.color='#94a3b8'">hello@postify.app</a>
+                </div>
+                <div style="color:#cbd5e1;">
+                    <p style="color:#00d9ff;font-weight:600;margin-bottom:0.25rem;">🐦 Twitter/X</p>
+                    <a href="https://x.com/postifyapp" target="_blank" style="color:#94a3b8;text-decoration:none;" onmouseover="this.style.color='#00d9ff'" onmouseout="this.style.color='#94a3b8'">@postifyapp</a>
+                </div>
+                <div style="color:#cbd5e1;">
+                    <p style="color:#00d9ff;font-weight:600;margin-bottom:0.25rem;">📍 Address</p>
+                    <p style="color:#94a3b8;">india</p>
+                </div>
             </div>
+            <p style="color:#64748b;font-size:0.875rem;">Response time: 24-48 hours</p>
+        </div>
+
+        <!-- Privacy Policy Popup -->
+        <div id="privacy-popup" class="popup-content" style="background:#0f172a;border:1px solid rgba(0,217,255,0.3);border-radius:1.5rem;width:100%;max-width:600px;box-shadow:0 0 50px rgba(0,217,255,0.2);padding:2rem;position:relative;max-height:80vh;overflow-y:auto;display:none;" onclick="event.stopPropagation()">
+            <button onclick="closeAllPopups()" style="position:absolute;top:1rem;right:1rem;background:rgba(0,217,255,0.1);border:1px solid rgba(0,217,255,0.3);color:#00d9ff;width:2rem;height:2rem;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1.25rem;"><i class="ph ph-x"></i></button>
+            <h2 style="color:#00d9ff;margin-bottom:1rem;font-size:1.75rem;">🔒 Privacy Policy</h2>
+            <p style="color:#cbd5e1;margin-bottom:1rem;line-height:1.6;"><strong style="color:#00d9ff;">Your privacy is sacred to us.</strong> We collect only what's essential to provide Postify, and we never sell your data.</p>
+            <p style="color:#cbd5e1;margin-bottom:1rem;line-height:1.6;"><strong style="color:#00d9ff;">What We Collect:</strong> Username, email, profile data, and your memories (encrypted end-to-end).</p>
+            <p style="color:#cbd5e1;margin-bottom:1rem;line-height:1.6;"><strong style="color:#00d9ff;">What We DON'T Do:</strong></p>
+            <ul style="color:#94a3b8;margin-bottom:1rem;padding-left:1.5rem;">
+                <li>❌ Sell your data to advertisers</li>
+                <li>❌ Track your location or device info</li>
+                <li>❌ Use cookies for marketing</li>
+                <li>❌ Share data with third-party apps</li>
+            </ul>
+            <p style="color:#64748b;font-size:0.875rem;">Last updated: May 2026 • <a href="#" style="color:#00d9ff;text-decoration:none;">Read Full Privacy Policy</a></p>
+        </div>
+
+        <!-- Terms of Service Popup -->
+        <div id="terms-popup" class="popup-content" style="background:#0f172a;border:1px solid rgba(0,217,255,0.3);border-radius:1.5rem;width:100%;max-width:600px;box-shadow:0 0 50px rgba(0,217,255,0.2);padding:2rem;position:relative;max-height:80vh;overflow-y:auto;display:none;" onclick="event.stopPropagation()">
+            <button onclick="closeAllPopups()" style="position:absolute;top:1rem;right:1rem;background:rgba(0,217,255,0.1);border:1px solid rgba(0,217,255,0.3);color:#00d9ff;width:2rem;height:2rem;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1.25rem;"><i class="ph ph-x"></i></button>
+            <h2 style="color:#00d9ff;margin-bottom:1rem;font-size:1.75rem;">⚖️ Terms of Service</h2>
+            <p style="color:#cbd5e1;margin-bottom:1rem;line-height:1.6;">By using Postify, you agree to create a positive, peaceful community.</p>
+            <p style="color:#cbd5e1;margin-bottom:1rem;line-height:1.6;"><strong style="color:#00d9ff;">You Agree To:</strong></p>
+            <ul style="color:#94a3b8;margin-bottom:1rem;padding-left:1.5rem;">
+                <li>✓ Be authentic and respectful</li>
+                <li>✓ Not spam, harass, or abuse others</li>
+                <li>✓ Not share illegal or harmful content</li>
+                <li>✓ Respect copyright and intellectual property</li>
+            </ul>
+            <p style="color:#cbd5e1;margin-bottom:1rem;line-height:1.6;"><strong style="color:#00d9ff;">We Reserve the Right To:</strong></p>
+            <ul style="color:#94a3b8;margin-bottom:1rem;padding-left:1.5rem;">
+                <li>Remove content that violates these terms</li>
+                <li>Ban users who repeatedly violate community guidelines</li>
+                <li>Modify features and pricing with notice</li>
+            </ul>
+            <p style="color:#64748b;font-size:0.875rem;">Last updated: May 2026 • <a href="#" style="color:#00d9ff;text-decoration:none;">Read Full Terms</a></p>
         </div>
     </div>
 

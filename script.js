@@ -1,4 +1,35 @@
-// Mouse follow glow effect
+// ======= POPUP FUNCTIONS ======= 
+function openPopup(popupId) {
+    const overlay = document.getElementById('popup-overlay');
+    const popup = document.getElementById(popupId);
+    
+    if (overlay && popup) {
+        overlay.style.display = 'flex';
+        popup.style.display = 'block';
+    }
+}
+
+function closeAllPopups() {
+    const overlay = document.getElementById('popup-overlay');
+    const popups = document.querySelectorAll('.popup-content');
+    
+    if (overlay) {
+        overlay.style.display = 'none';
+    }
+    popups.forEach(popup => {
+        popup.style.display = 'none';
+    });
+}
+
+// Close popup on ESC key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        closeAllPopups();
+    }
+});
+
+// ======= MOUSE GLOW & NAVIGATION ======= 
+
 const glow = document.getElementById('mouse-glow');
 document.addEventListener('mousemove', (e) => {
     requestAnimationFrame(() => {
@@ -6,6 +37,27 @@ document.addEventListener('mousemove', (e) => {
         glow.style.top = e.clientY + 'px';
     });
 });
+
+// Smooth scroll navigation without page lock
+document.querySelectorAll('[data-scroll]').forEach(link => {
+    link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const targetId = link.getAttribute('data-scroll');
+        const targetElement = document.getElementById(targetId) || document.querySelector(`[id="${targetId}"]`);
+        
+        if (targetElement) {
+            const headerHeight = 100; // Adjust based on your navbar height
+            const targetPosition = targetElement.offsetTop - headerHeight;
+            
+            window.scrollTo({
+                top: targetPosition,
+                behavior: 'smooth'
+            });
+        }
+    });
+});
+
+
 
 // Navbar blur on scroll
 const navbar = document.getElementById('navbar');
