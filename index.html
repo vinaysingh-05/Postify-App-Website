@@ -1,0 +1,1150 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Postify | Peaceful Social Media</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="style.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#050816',
+                            surface1: '#0f172a',
+                            surface2: '#07111f',
+                            cyan: '#00d9ff',
+                            blue: '#38bdf8',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Poppins', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Navbar scrolled state */
+        #navbar.scrolled {
+            background: rgba(5, 8, 22, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        /* FAQ open state */
+        .faq-item.faq-open {
+            border-color: rgba(0, 217, 255, 0.3);
+            background: rgba(255,255,255,0.05);
+        }
+        /* Hidden utility */
+        .hidden { display: none !important; }
+        /* opacity-0 utility */
+        .opacity-0 { opacity: 0; }
+        /* scale-95 utility */
+        .scale-95 { transform: scale(0.95); }
+        /* FAQ content */
+        .faq-content { display: block; }
+        .faq-content.hidden { display: none !important; }
+    </style>
+</head>
+<body class="antialiased relative" style="font-family:'Inter',sans-serif;">
+
+    <div class="bg-noise"></div>
+    <div id="mouse-glow"></div>
+
+    <!-- Ambient Background Gradients -->
+    <div style="position:fixed;top:0;left:0;width:100%;height:100%;overflow:hidden;pointer-events:none;z-index:0;">
+        <div style="position:absolute;top:-20%;left:-10%;width:50vw;height:50vw;border-radius:50%;background:rgba(0,217,255,0.1);filter:blur(120px);" class="animate-aurora"></div>
+        <div style="position:absolute;bottom:-20%;right:-10%;width:40vw;height:40vw;border-radius:50%;background:rgba(56,189,248,0.1);filter:blur(120px);animation:aurora 25s linear infinite reverse;"></div>
+    </div>
+
+    <!-- Floating Glass Particles -->
+    <div style="position:fixed;top:0;left:0;width:100%;height:100%;overflow:hidden;pointer-events:none;z-index:5;">
+        <div class="glass-particle animate-float-up-1" style="width:4rem;height:4rem;left:10%;color:rgba(0,217,255,0.5);font-size:1.5rem;"><i class="ph-fill ph-heart"></i></div>
+        <div class="glass-particle animate-float-up-2" style="width:3rem;height:3rem;left:85%;color:rgba(56,189,248,0.5);font-size:1.25rem;"><i class="ph-fill ph-user-plus"></i></div>
+        <div class="glass-particle animate-float-up-3" style="width:5rem;height:5rem;left:25%;color:rgba(255,255,255,0.3);font-size:1.875rem;"><i class="ph-fill ph-sparkle"></i></div>
+        <div class="glass-particle animate-float-up-4" style="width:3.5rem;height:3.5rem;left:75%;color:rgba(0,217,255,0.4);font-size:1.25rem;"><i class="ph-fill ph-heart"></i></div>
+        <div class="glass-particle animate-float-up-5" style="width:2.5rem;height:2.5rem;left:45%;color:rgba(56,189,248,0.6);font-size:1.125rem;"><i class="ph-fill ph-leaf"></i></div>
+        <div class="glass-particle animate-float-up-6" style="width:4rem;height:4rem;left:60%;color:rgba(255,255,255,0.4);font-size:1.5rem;"><i class="ph-fill ph-user-circle-plus"></i></div>
+        <div class="glass-particle animate-float-up-7" style="width:3rem;height:3rem;left:35%;color:rgba(0,217,255,0.6);font-size:1.125rem;"><i class="ph-fill ph-heart"></i></div>
+    </div>
+
+    <!-- ======= NAVBAR ======= -->
+   <!-- ================= PREMIUM NAVBAR ================= -->
+
+<<!-- ================= PREMIUM NAVBAR ================= -->
+
+<nav style="
+position:fixed;
+top:0;
+left:0;
+width:100%;
+z-index:9999;
+padding:1rem 2rem;
+background:rgba(5,8,22,0.55);
+backdrop-filter:blur(18px);
+-webkit-backdrop-filter:blur(18px);
+border-bottom:1px solid rgba(255,255,255,0.06);
+box-shadow:0 0 30px rgba(0,217,255,0.08);
+">
+
+    <div style="
+    max-width:1400px;
+    margin:auto;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    ">
+
+        <!-- LOGO -->
+        <div style="
+        display:flex;
+        align-items:center;
+        gap:0.8rem;
+        cursor:pointer;
+        ">
+
+            <!-- ADD YOUR IMAGE HERE -->
+            <img 
+            src="images/logo.png"
+            alt="Postify Logo"
+            style="
+            width:42px;
+            height:42px;
+            border-radius:14px;
+            object-fit:cover;
+            box-shadow:0 0 25px rgba(0,217,255,0.45);
+            ">
+
+            <h2 style="
+            color:white;
+            font-size:1.3rem;
+            font-weight:700;
+            font-family:'Poppins',sans-serif;
+            letter-spacing:0.5px;
+            margin:0;
+            ">
+                Postify
+            </h2>
+        </div>
+
+        <!-- MENU -->
+        <div style="
+        display:flex;
+        align-items:center;
+        gap:2rem;
+        ">
+
+            <a href="#features" style="
+            color:#cbd5e1;
+            text-decoration:none;
+            font-size:0.95rem;
+            transition:0.3s;
+            "
+            onmouseover="this.style.color='#00d9ff'"
+            onmouseout="this.style.color='#cbd5e1'">
+                Features
+            </a>
+
+            <a href="#premium" style="
+            color:#cbd5e1;
+            text-decoration:none;
+            font-size:0.95rem;
+            transition:0.3s;
+            "
+            onmouseover="this.style.color='#00d9ff'"
+            onmouseout="this.style.color='#cbd5e1'">
+                Premium
+            </a>
+
+            <a href="#screenshots" style="
+            color:#cbd5e1;
+            text-decoration:none;
+            font-size:0.95rem;
+            transition:0.3s;
+            "
+            onmouseover="this.style.color='#00d9ff'"
+            onmouseout="this.style.color='#cbd5e1'">
+                Screenshots
+            </a>
+
+            <a href="#community" style="
+            color:#cbd5e1;
+            text-decoration:none;
+            font-size:0.95rem;
+            transition:0.3s;
+            "
+            onmouseover="this.style.color='#00d9ff'"
+            onmouseout="this.style.color='#cbd5e1'">
+                Community
+            </a>
+
+            <a href="#download" style="
+            color:#cbd5e1;
+            text-decoration:none;
+            font-size:0.95rem;
+            transition:0.3s;
+            "
+            onmouseover="this.style.color='#00d9ff'"
+            onmouseout="this.style.color='#cbd5e1'">
+                Download
+            </a>
+
+        </div>
+
+        <!-- DOWNLOAD BUTTON -->
+        <a href="#download" style="
+        background:#00d9ff;
+        color:#000;
+        text-decoration:none;
+        padding:0.9rem 1.6rem;
+        border-radius:14px;
+        font-weight:700;
+        font-size:0.92rem;
+        transition:all 0.3s;
+        box-shadow:0 0 25px rgba(0,217,255,0.35);
+        "
+        onmouseover="
+        this.style.background='#fff';
+        this.style.transform='translateY(-3px)';
+        this.style.boxShadow='0 0 35px rgba(0,217,255,0.5)';
+        "
+        onmouseout="
+        this.style.background='#00d9ff';
+        this.style.transform='translateY(0)';
+        this.style.boxShadow='0 0 25px rgba(0,217,255,0.35)';
+        ">
+            Download APK
+        </a>
+
+    </div>
+</nav>
+    <!-- ======= HERO SECTION ======= -->
+    <section style="position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;padding-top:8rem;padding-bottom:5rem;padding-left:1.5rem;padding-right:1.5rem;z-index:10;">
+        <div class="max-w-7xl mx-auto" style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;width:100%;">
+
+            <div style="text-align:left;z-index:10;" class="reveal">
+                <div class="glass-panel" style="display:inline-flex;align-items:center;gap:0.5rem;padding:0.25rem 0.75rem;border-radius:9999px;border:1px solid rgba(0,217,255,0.3);color:#00d9ff;font-size:0.75rem;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:1.5rem;box-shadow:0 0 10px rgba(138,190,224,0.2);">
+                    <span style="position:relative;display:flex;height:0.5rem;width:0.5rem;">
+                        <span style="animation:ping 1s cubic-bezier(0,0,0.2,1) infinite;position:absolute;display:inline-flex;height:100%;width:100%;border-radius:50%;background:#00d9ff;opacity:0.75;"></span>
+                        <span style="position:relative;display:inline-flex;border-radius:50%;height:0.5rem;width:0.5rem;background:#00d9ff;"></span>
+                    </span>
+                    Now Live
+                </div>
+                <h1 style="font-size:clamp(2.5rem,5vw,4.5rem);font-family:'Poppins',sans-serif;font-weight:700;line-height:1.1;letter-spacing:-0.03em;margin-bottom:1.5rem;">
+                    Share Freely.<br>
+                    <span class="text-gradient-cyan">No Judgment.</span>
+                </h1>
+                <p style="font-size:1.125rem;color:#94a3b8;font-weight:300;margin-bottom:2.5rem;max-width:32rem;line-height:1.75;">
+                    A peaceful social platform focused on positivity, expression, and emotional comfort. Leave the noise behind.
+                </p>
+
+                <div style="display:flex;flex-wrap:wrap;align-items:center;gap:1rem;">
+                    <a href="#download" style="background:#fff;color:#000;padding:1rem 2rem;border-radius:9999px;font-weight:500;text-decoration:none;display:flex;align-items:center;gap:0.5rem;box-shadow:0 0 20px rgba(255,255,255,0.2);transition:transform 0.2s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                        <i class="ph ph-download-simple" style="font-size:1.25rem;"></i> Download APK
+                    </a>
+                    <a href="#features" style="padding:1rem 2rem;border-radius:9999px;font-weight:500;color:#fff;text-decoration:none;display:flex;align-items:center;gap:0.5rem;transition:background 0.2s;" class="glass-panel" onmouseover="this.style.background='rgba(255,255,255,0.1)'" onmouseout="this.style.background=''">
+                        Watch Preview <i class="ph ph-play-circle" style="font-size:1.25rem;"></i>
+                    </a>
+                </div>
+
+                <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:4rem;padding-top:2rem;border-top:1px solid rgba(255,255,255,0.1);">
+                    <div>
+                        <div style="font-size:1.875rem;font-family:'Poppins',sans-serif;font-weight:700;color:#fff;margin-bottom:0.25rem;">10K+</div>
+                        <div style="font-size:0.75rem;color:#64748b;text-transform:uppercase;letter-spacing:0.1em;">Positive Posts</div>
+                    </div>
+                    <div>
+                        <div style="font-size:1.875rem;font-family:'Poppins',sans-serif;font-weight:700;color:#00d9ff;margin-bottom:0.25rem;">50K+</div>
+                        <div style="font-size:0.75rem;color:#64748b;text-transform:uppercase;letter-spacing:0.1em;">Hearts Shared</div>
+                    </div>
+                    <div>
+                        <div style="font-size:1.875rem;font-family:'Poppins',sans-serif;font-weight:700;color:#fff;margin-bottom:0.25rem;">100%</div>
+                        <div style="font-size:0.75rem;color:#64748b;text-transform:uppercase;letter-spacing:0.1em;">Toxic-Free</div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="position:relative;z-index:10;display:flex;justify-content:center;" class="reveal">
+                <!-- Float badge top left -->
+                <div class="glass-panel animate-float" style="position:absolute;top:2.5rem;left:-2.5rem;padding:0.75rem;border-radius:1rem;display:flex;align-items:center;gap:0.75rem;box-shadow:0 4px 20px rgba(0,0,0,0.3);z-index:20;">
+                    <div style="width:2.5rem;height:2.5rem;border-radius:50%;background:rgba(0,217,255,0.2);display:flex;align-items:center;justify-content:center;color:#00d9ff;">
+                        <i class="ph-fill ph-heart" style="font-size:1.25rem;"></i>
+                    </div>
+                    <div>
+                        <div style="font-size:0.875rem;font-weight:600;color:#fff;">New Memory</div>
+                        <div style="font-size:0.75rem;color:#94a3b8;">Just shared</div>
+                    </div>
+                </div>
+                <!-- Float badge bottom right -->
+                <div class="glass-panel animate-float-delayed" style="position:absolute;bottom:5rem;right:-2.5rem;padding:0.75rem;border-radius:1rem;display:flex;align-items:center;gap:0.5rem;box-shadow:0 4px 20px rgba(0,0,0,0.3);z-index:20;">
+                    <img src="https://placehold.co/100x100/1e293b/ffffff?text=Sarah" style="width:2rem;height:2rem;border-radius:50%;" alt="User">
+                    <div style="font-size:0.875rem;font-weight:500;color:#fff;">Feeling peaceful 🌿</div>
+                </div>
+
+                <!-- Phone -->
+                <div class="phone-container animate-float">
+                    <div class="phone-body hero-phone">
+                        <div class="dynamic-island"></div>
+                        <div class="phone-screen" style="background:#050816;padding:1rem;display:flex;flex-direction:column;position:relative;">
+                            <div style="display:flex;justify-content:space-between;align-items:center;margin-top:1.5rem;margin-bottom:1rem;">
+                                <span style="font-family:'Poppins',sans-serif;font-weight:700;font-size:1.125rem;">Postify</span>
+                                <i class="ph ph-bell" style="font-size:1.25rem;"></i>
+                            </div>
+                            <div style="background:#0f172a;border-radius:1rem;padding:1rem;margin-bottom:1rem;border:1px solid rgba(255,255,255,0.05);">
+                                <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.75rem;">
+                                    <div style="width:2.5rem;height:2.5rem;border-radius:50%;background:linear-gradient(135deg,#a855f7,#3b82f6);padding:2px;">
+                                        <img src="https://placehold.co/100x100/0f172a/ffffff?text=JD" style="width:100%;height:100%;border-radius:50%;border:2px solid #0f172a;" alt="Avatar">
+                                    </div>
+                                    <div>
+                                        <div style="font-size:0.875rem;font-weight:500;">Jason Doe</div>
+                                        <div style="font-size:0.75rem;color:#64748b;">2 hours ago</div>
+                                    </div>
+                                </div>
+                                <div style="width:100%;height:10rem;background:#1e293b;border-radius:0.75rem;margin-bottom:0.75rem;overflow:hidden;">
+                                    <img src="https://www.shutterstock.com/image-photo/serenity-summer-day-durmitor-national-600nw-2623341111.jpg" style="width:100%;height:100%;object-fit:cover;" alt="Post Image">
+                                </div>
+                                <p style="font-size:0.875rem;color:#cbd5e1;margin-bottom:1rem;">Morning walk in the valley. The silence is everything. #peace</p>
+                                <div style="display:flex;align-items:center;justify-content:space-between;border-top:1px solid rgba(255,255,255,0.1);padding-top:0.75rem;">
+                                    <div style="display:flex;align-items:center;gap:0.5rem;color:#00d9ff;">
+                                        <i class="ph-fill ph-heart" style="font-size:1.125rem;"></i>
+                                        <span style="font-size:0.75rem;font-weight:500;">124</span>
+                                    </div>
+                                    <i class="ph ph-share-network" style="color:#94a3b8;"></i>
+                                </div>
+                            </div>
+                            <!-- Bottom Nav -->
+                            <div style="position:absolute;bottom:0;left:0;width:100%;height:5rem;background:rgba(5,8,22,0.8);backdrop-filter:blur(12px);display:flex;justify-content:space-around;align-items:center;border-top:1px solid rgba(255,255,255,0.1);padding-bottom:0.5rem;">
+                                <i class="ph-fill ph-house" style="color:#fff;font-size:1.5rem;"></i>
+                                <i class="ph ph-magnifying-glass" style="color:#64748b;font-size:1.5rem;"></i>
+                                <div style="width:3rem;height:3rem;border-radius:50%;background:#fff;color:#000;display:flex;align-items:center;justify-content:center;transform:translateY(-1rem);box-shadow:0 0 15px rgba(255,255,255,0.3);">
+                                    <i class="ph ph-plus" style="font-size:1.25rem;"></i>
+                                </div>
+                                <i class="ph ph-bell" style="color:#64748b;font-size:1.5rem;"></i>
+                                <div style="width:1.5rem;height:1.5rem;border-radius:50%;background:#334155;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======= FEATURE: NO COMMENTS ======= -->
+    <section id="features" style="padding:6rem 1.5rem;position:relative;z-index:10;overflow:hidden;">
+        <div class="max-w-7xl mx-auto" style="display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;">
+            <div class="phone-container reveal">
+                <div class="phone-body feature-phone-left">
+                    <div class="dynamic-island"></div>
+                    <div class="phone-screen" style="background:#0f172a;padding:1rem;display:flex;flex-direction:column;justify-content:center;align-items:center;position:relative;">
+                        <div style="width:100%;max-width:240px;text-align:center;margin-bottom:2rem;margin-top:2.5rem;">
+                            <div style="width:4rem;height:4rem;border-radius:50%;background:rgba(239,68,68,0.1);color:#f87171;margin:0 auto 1rem;display:flex;align-items:center;justify-content:center;border:1px solid rgba(239,68,68,0.2);">
+                                <i class="ph ph-chat-teardrop-slash" style="font-size:1.875rem;"></i>
+                            </div>
+                            <h3 style="color:#fff;font-weight:500;margin-bottom:0.5rem;">Comments Disabled</h3>
+                            <p style="font-size:0.75rem;color:#94a3b8;">Protecting your peace. Only positive interactions allowed.</p>
+                        </div>
+                        <div style="width:100%;background:#050816;border-radius:1rem;padding:1rem;border:1px solid rgba(255,255,255,0.05);box-shadow:0 10px 30px rgba(0,0,0,0.4);">
+                            <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:1rem;border-bottom:1px solid rgba(255,255,255,0.05);padding-bottom:1rem;">
+                                <div style="width:2.5rem;height:2.5rem;border-radius:50%;background:#1e293b;"></div>
+                                <div style="display:flex;flex-direction:column;gap:0.5rem;">
+                                    <div style="width:6rem;height:0.5rem;background:#334155;border-radius:9999px;"></div>
+                                    <div style="width:4rem;height:0.5rem;background:#1e293b;border-radius:9999px;"></div>
+                                </div>
+                            </div>
+                            <div style="width:100%;height:8rem;background:#1e293b;border-radius:0.75rem;margin-bottom:1rem;overflow:hidden;border:1px solid rgba(255,255,255,0.05);">
+                                <img src="https://www.faithinnature.co.uk/cdn/shop/articles/JanuaryBlues2_9ea0efbf-8225-435f-bc92-eb8a82b1c58a.jpg?v=1765204748" style="width:100%;height:100%;object-fit:cover;" alt="Nature Post">
+                            </div>
+                            <div style="display:flex;justify-content:center;padding:0.5rem 0;">
+                                <div style="display:flex;align-items:center;gap:0.5rem;color:#00d9ff;background:rgba(0,217,255,0.1);padding:0.5rem 1rem;border-radius:9999px;">
+                                    <i class="ph-fill ph-heart" style="font-size:1.25rem;"></i>
+                                    <span style="font-size:0.875rem;font-weight:600;">Support via Hearts Only</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div style="text-align:left;" class="reveal">
+                <h2 style="font-size:clamp(2rem,4vw,3rem);font-family:'Poppins',sans-serif;font-weight:700;margin-bottom:1.5rem;">Zero Toxic Comments.<br><span class="text-gradient">Pure Expression.</span></h2>
+                <p style="font-size:1.125rem;color:#94a3b8;margin-bottom:2rem;line-height:1.75;">
+                    We removed the comment section completely. Why? Because your memories and thoughts don't need to be debated or judged. Postify is a sanctuary for your mind.
+                </p>
+                <ul style="list-style:none;padding:0;display:flex;flex-direction:column;gap:1rem;">
+                    <li style="display:flex;align-items:center;gap:0.75rem;">
+                        <div style="width:2rem;height:2rem;border-radius:50%;background:rgba(0,217,255,0.2);display:flex;align-items:center;justify-content:center;color:#00d9ff;"><i class="ph ph-check"></i></div>
+                        <span style="color:#cbd5e1;">No trolls or negativity</span>
+                    </li>
+                    <li style="display:flex;align-items:center;gap:0.75rem;">
+                        <div style="width:2rem;height:2rem;border-radius:50%;background:rgba(0,217,255,0.2);display:flex;align-items:center;justify-content:center;color:#00d9ff;"><i class="ph ph-check"></i></div>
+                        <span style="color:#cbd5e1;">No performance anxiety</span>
+                    </li>
+                    <li style="display:flex;align-items:center;gap:0.75rem;">
+                        <div style="width:2rem;height:2rem;border-radius:50%;background:rgba(0,217,255,0.2);display:flex;align-items:center;justify-content:center;color:#00d9ff;"><i class="ph ph-check"></i></div>
+                        <span style="color:#cbd5e1;">Absolute mental clarity</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======= FEATURE: NO FOLLOWER COUNTS ======= -->
+    <section style="padding:6rem 1.5rem;position:relative;z-index:10;">
+        <div class="max-w-7xl mx-auto" style="display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;">
+            <div style="text-align:left;" class="reveal">
+                <h2 style="font-size:clamp(2rem,4vw,3rem);font-family:'Poppins',sans-serif;font-weight:700;margin-bottom:1.5rem;">No Follower Counts.<br><span class="text-gradient">Just You.</span></h2>
+                <p style="font-size:1.125rem;color:#94a3b8;margin-bottom:2rem;line-height:1.75;">
+                    Social media shouldn't be a popularity contest. We've hidden follower counts so you can focus on what matters: sharing your authentic self without comparison.
+                </p>
+                <div class="glass-panel" style="padding:1.5rem;border-radius:1rem;border-left:4px solid #00d9ff;display:inline-block;">
+                    <p style="color:#fff;font-style:italic;">"It feels like breathing fresh air again. I post for me, not for an audience."</p>
+                    <div style="font-size:0.875rem;color:#00d9ff;margin-top:0.5rem;">— Early Adopter</div>
+                </div>
+            </div>
+            <div class="phone-container reveal">
+                <div class="phone-body feature-phone-right">
+                    <div class="dynamic-island"></div>
+                    <div class="phone-screen" style="background:#050816;padding:1rem;padding-top:3rem;position:relative;overflow-y:auto;">
+                        <div style="display:flex;flex-direction:column;align-items:center;margin-bottom:1.5rem;">
+                            <div style="width:6rem;height:6rem;border-radius:50%;background:linear-gradient(135deg,#00d9ff,#3b82f6);padding:4px;margin-bottom:0.75rem;">
+                                <img src="https://placehold.co/200x200/0f172a/ffffff?text=U" style="width:100%;height:100%;border-radius:50%;border:4px solid #050816;" alt="Profile">
+                            </div>
+                            <h3 style="font-size:1.25rem;font-weight:700;">Alex Chen</h3>
+                            <p style="font-size:0.875rem;color:#94a3b8;">Digital minimalist.</p>
+                        </div>
+                        <div style="display:flex;justify-content:center;gap:2rem;margin-bottom:1.5rem;padding-bottom:1.5rem;border-bottom:1px solid rgba(255,255,255,0.1);">
+                            <div style="text-align:center;">
+                                <div style="font-size:1.25rem;font-weight:700;">42</div>
+                                <div style="font-size:0.75rem;color:#64748b;text-transform:uppercase;">Memories</div>
+                            </div>
+                            <div style="text-align:center;opacity:0.4;">
+                                <div style="font-size:1.25rem;font-weight:700;">--</div>
+                                <div style="font-size:0.75rem;color:#64748b;text-transform:uppercase;">Followers</div>
+                            </div>
+                        </div>
+                        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:4px;">
+                            <div style="aspect-ratio:1;background:#1e293b;border-radius:4px;overflow:hidden;"><img src="data:image/jpeg;base64,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" style="width:100%;height:100%;object-fit:cover;" alt="Memory"></div>
+                            <div style="aspect-ratio:1;background:#334155;border-radius:4px;overflow:hidden;"><img src="https://images.unsplash.com/photo-1447069387593-a5de0862481e?q=80&w=200&auto=format&fit=crop" style="width:100%;height:100%;object-fit:cover;" alt="Memory"></div>
+                            <div style="aspect-ratio:1;background:#1e293b;border-radius:4px;overflow:hidden;"><img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=200&auto=format&fit=crop" style="width:100%;height:100%;object-fit:cover;" alt="Memory"></div>
+                            <div style="aspect-ratio:1;background:#334155;border-radius:4px;overflow:hidden;"><img src="https://images.unsplash.com/photo-1490730141103-6cac27aaab94?q=80&w=200&auto=format&fit=crop" style="width:100%;height:100%;object-fit:cover;" alt="Memory"></div>
+                            <div style="aspect-ratio:1;background:#1e293b;border-radius:4px;overflow:hidden;"><img src="data:image/jpeg;base64,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" style="width:100%;height:100%;object-fit:cover;" alt="Memory"></div>
+                            <div style="aspect-ratio:1;background:#334155;border-radius:4px;overflow:hidden;"><img src="https://images.unsplash.com/photo-1511895426328-dc8714191300?q=80&w=200&auto=format&fit=crop" style="width:100%;height:100%;object-fit:cover;" alt="Memory"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======= FEATURE: ZEN SPACE ======= -->
+    <section style="padding:6rem 1.5rem;position:relative;z-index:10;overflow:hidden;">
+        <div class="max-w-7xl mx-auto" style="display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;">
+            <div style="text-align:left;" class="reveal">
+                <h2 style="font-size:clamp(2rem,4vw,3rem);font-family:'Poppins',sans-serif;font-weight:700;margin-bottom:1.5rem;">Your Digital<br><span class="text-gradient-cyan">Sanctuary.</span></h2>
+                <p style="font-size:1.125rem;color:#94a3b8;margin-bottom:2rem;line-height:1.75;">
+                    Postify is designed with cinematic dark modes, fluid animations, and a clutter-free interface that instantly lowers your heart rate. It's social media that feels like meditation.
+                </p>
+                <ul style="list-style:none;padding:0;display:flex;flex-direction:column;gap:1rem;">
+                    <li style="display:flex;align-items:center;gap:0.75rem;">
+                        <div style="width:2rem;height:2rem;border-radius:50%;background:rgba(56,189,248,0.2);display:flex;align-items:center;justify-content:center;color:#38bdf8;"><i class="ph ph-moon-stars"></i></div>
+                        <span style="color:#cbd5e1;">Deep OLED dark mode</span>
+                    </li>
+                    <li style="display:flex;align-items:center;gap:0.75rem;">
+                        <div style="width:2rem;height:2rem;border-radius:50%;background:rgba(56,189,248,0.2);display:flex;align-items:center;justify-content:center;color:#38bdf8;"><i class="ph ph-wind"></i></div>
+                        <span style="color:#cbd5e1;">Fluid 120hz animations</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="phone-container reveal">
+                <div class="phone-body feature-phone-right">
+                    <div class="dynamic-island"></div>
+                    <div class="phone-screen" style="background:#02040a;padding:1.5rem;display:flex;flex-direction:column;justify-content:center;align-items:center;position:relative;border:0.5px solid rgba(255,255,255,0.05);">
+                        <div style="position:absolute;top:2.5rem;width:100%;padding:0 1.5rem;display:flex;justify-content:space-between;align-items:center;">
+                            <i class="ph ph-list" style="color:#64748b;font-size:1.25rem;"></i>
+                            <span style="font-size:0.75rem;font-weight:500;letter-spacing:0.2em;color:#64748b;text-transform:uppercase;">Zen Mode</span>
+                            <i class="ph ph-sliders-horizontal" style="color:#64748b;font-size:1.25rem;"></i>
+                        </div>
+                        <div style="width:8rem;height:8rem;border-radius:50%;border:1px solid rgba(0,217,255,0.2);display:flex;align-items:center;justify-content:center;margin-bottom:2rem;position:relative;overflow:hidden;box-shadow:0 0 30px rgba(138,190,224,0.15);">
+                            <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=300&auto=format&fit=crop" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.5;mix-blend-mode:overlay;" alt="Zen Background">
+                            <div style="position:absolute;inset:0;border-radius:50%;border:1px solid rgba(0,217,255,0.4);" class="animate-ping" style="opacity:0.2;"></div>
+                            <div style="width:5rem;height:5rem;border-radius:50%;background:rgba(5,8,22,0.6);backdrop-filter:blur(12px);display:flex;align-items:center;justify-content:center;z-index:10;border:1px solid rgba(255,255,255,0.1);">
+                                <i class="ph-fill ph-leaf" style="font-size:1.875rem;color:#00d9ff;filter:drop-shadow(0 0 15px rgba(138,190,224,0.8));"></i>
+                            </div>
+                        </div>
+                        <h3 style="color:#fff;font-size:1.125rem;font-weight:500;margin-bottom:0.5rem;">Breathe deeply.</h3>
+                        <p style="font-size:0.875rem;color:#64748b;text-align:center;padding:0 1rem;margin-bottom:2rem;">You are completely safe from judgment here.</p>
+                        <div class="glass-panel" style="width:100%;border-radius:1rem;padding:1rem;border:1px solid rgba(255,255,255,0.05);display:flex;justify-content:space-between;align-items:center;">
+                            <span style="font-size:0.875rem;color:#cbd5e1;">Quiet Feed</span>
+                            <div style="width:3rem;height:1.5rem;background:#00d9ff;border-radius:9999px;padding:4px;position:relative;cursor:pointer;box-shadow:0 0 15px rgba(0,217,255,0.4);">
+                                <div style="width:1rem;height:1rem;background:#fff;border-radius:50%;position:absolute;right:4px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======= PREMIUM SCREENSHOTS GALLERY ======= -->
+
+<section id="screenshots" style="
+padding:7rem 0;
+position:relative;
+z-index:10;
+background:
+linear-gradient(
+to bottom,
+rgba(15,23,42,0.25),
+rgba(5,8,22,0.95),
+rgba(15,23,42,0.25)
+);
+border-top:1px solid rgba(255,255,255,0.05);
+border-bottom:1px solid rgba(255,255,255,0.05);
+overflow:hidden;
+">
+
+    <!-- HEADING -->
+    <div style="
+    text-align:center;
+    margin-bottom:4rem;
+    padding:0 1.5rem;
+    position:relative;
+    z-index:5;
+    ">
+
+        <h2 style="
+        font-size:clamp(2rem,4vw,3rem);
+        font-family:'Poppins',sans-serif;
+        font-weight:700;
+        margin-bottom:1rem;
+        color:white;
+        ">
+            Immersive Experience
+        </h2>
+
+        <p style="
+        color:#94a3b8;
+        max-width:42rem;
+        margin:0 auto;
+        line-height:1.8;
+        ">
+            Crafted with emotional design and futuristic interactions.
+        </p>
+    </div>
+
+    <!-- SLIDER -->
+    <div class="slider">
+
+        <div class="slide-track">
+
+            <!-- ORIGINAL 4 -->
+            <div class="phone-card">
+                <img src="images/imagesapp-ui-1.jpeg" alt="">
+            </div>
+
+            <div class="phone-card">
+                <img src="images/imagesapp-ui-2.jpeg" alt="">
+            </div>
+
+            <div class="phone-card">
+                <img src="images/imagesapp-ui-3.jpeg" alt="">
+            </div>
+
+            <div class="phone-card">
+                <img src="images/imagesapp-ui-4.jpeg" alt="">
+            </div>
+
+         <div class="phone-card">
+                <img src="images/imagesapp-ui-5.jpeg" alt="">
+            </div>
+
+            <!-- DUPLICATE FOR INFINITE LOOP -->
+            <div class="phone-card">
+                <img src="images/imagesapp-ui-1.jpeg" alt="">
+            </div>
+
+            <div class="phone-card">
+                <img src="images/imagesapp-ui-2.jpeg" alt="">
+            </div>
+
+            <div class="phone-card">
+                <img src="images/imagesapp-ui-3.jpeg" alt="">
+            </div>
+
+            <div class="phone-card">
+                <img src="images/imagesapp-ui-4.jpeg" alt="">
+
+            </div>
+            <div class="phone-card">
+                <img src="images/imagesapp-ui-5.jpeg" alt="">
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<style>
+.slider{
+    width:100%;
+    overflow:hidden;
+    position:relative;
+}
+
+.slide-track{
+    display:flex;
+    gap:2rem;
+    width:calc(280px * 8);
+    animation:scroll 30s linear infinite;
+}
+
+.slide-track:hover{
+    animation-play-state:paused;
+}
+
+.phone-card{
+    width:280px;
+    height:580px;
+    flex-shrink:0;
+    border-radius:2.5rem;
+    overflow:hidden;
+    position:relative;
+    background:rgba(255,255,255,0.03);
+    border:1px solid rgba(255,255,255,0.08);
+    backdrop-filter:blur(14px);
+    box-shadow:
+    0 0 40px rgba(0,217,255,0.12),
+    inset 0 0 20px rgba(255,255,255,0.03);
+    transition:all 0.4s ease;
+}
+
+.phone-card:hover{
+    transform:translateY(-10px) scale(1.02);
+    box-shadow:0 0 60px rgba(0,217,255,0.25);
+}
+
+.phone-card img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+}
+
+/* INFINITE ANIMATION */
+@keyframes scroll{
+    0%{
+        transform:translateX(0);
+    }
+
+    100%{
+        transform:translateX(calc(-280px * 4 - 2rem * 4));
+    }
+}
+
+/* FADE EFFECT */
+.slider::before,
+.slider::after{
+    content:"";
+    position:absolute;
+    top:0;
+    width:12rem;
+    height:100%;
+    z-index:5;
+    pointer-events:none;
+}
+
+.slider::before{
+    left:0;
+    background:linear-gradient(to right,#050816,transparent);
+}
+
+.slider::after{
+    right:0;
+    background:linear-gradient(to left,#050816,transparent);
+}
+</style>
+
+    <!-- ======= PRICING ======= -->
+    <section id="premium" style="padding:8rem 1.5rem;position:relative;z-index:10;">
+        <div style="text-align:center;margin-bottom:5rem;" class="reveal">
+            <h2 style="font-size:clamp(2rem,4vw,3rem);font-family:'Poppins',sans-serif;font-weight:700;margin-bottom:1rem;">Choose Your <span class="text-gradient-cyan">Peaceful Experience</span></h2>
+            <p style="color:#94a3b8;max-width:36rem;margin:0 auto;font-size:1.125rem;">Invest in your mental clarity. No ads. No algorithms. Just pure connection.</p>
+        </div>
+
+        <div class="max-w-6xl mx-auto" style="display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;">
+            <!-- Free Plan -->
+            <div class="glass-panel glass-panel-hover reveal" style="border-radius:1.5rem;padding:2rem;display:flex;flex-direction:column;position:relative;transition:all 0.3s ease;" onmouseover="this.style.transform='translateY(-8px)'" onmouseout="this.style.transform='translateY(0)'">
+                <h3 style="font-size:1.25rem;font-weight:500;color:#cbd5e1;margin-bottom:0.5rem;">Basic</h3>
+                <div style="display:flex;align-items:baseline;gap:0.25rem;margin-bottom:2rem;">
+                    <span style="font-size:2.5rem;font-family:'Poppins',sans-serif;font-weight:700;color:#fff;">$0</span>
+                </div>
+                <ul style="list-style:none;padding:0;display:flex;flex-direction:column;gap:1rem;margin-bottom:2rem;flex:1;">
+                    <li style="display:flex;align-items:center;gap:0.75rem;font-size:0.875rem;color:#cbd5e1;"><i class="ph ph-check" style="color:#00d9ff;"></i> 2 uploads per day</li>
+                    <li style="display:flex;align-items:center;gap:0.75rem;font-size:0.875rem;color:#cbd5e1;"><i class="ph ph-check" style="color:#00d9ff;"></i> Basic profile</li>
+                    <li style="display:flex;align-items:center;gap:0.75rem;font-size:0.875rem;color:#cbd5e1;"><i class="ph ph-check" style="color:#00d9ff;"></i> Standard definition</li>
+                    <li style="display:flex;align-items:center;gap:0.75rem;font-size:0.875rem;color:#64748b;"><i class="ph ph-x"></i> Premium themes</li>
+                </ul>
+                <button style="width:100%;padding:1rem;border-radius:0.75rem;border:1px solid rgba(255,255,255,0.1);background:transparent;color:#fff;font-weight:500;cursor:pointer;transition:background 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.05)'" onmouseout="this.style.background='transparent'">Start Free</button>
+            </div>
+
+            <!-- Premium Monthly -->
+            <div class="reveal" style="background:#0f172a;border:1px solid rgba(0,217,255,0.5);border-radius:1.5rem;padding:2rem;display:flex;flex-direction:column;position:relative;transform:translateY(-1rem);box-shadow:0 0 30px rgba(138,190,224,0.1);transition:transform 0.3s ease;" onmouseover="this.style.transform='translateY(-2rem)'" onmouseout="this.style.transform='translateY(-1rem)'">
+                <div style="position:absolute;top:-1rem;left:50%;transform:translateX(-50%);background:linear-gradient(to right,#00d9ff,#38bdf8);color:#000;font-size:0.75rem;font-weight:700;padding:0.25rem 1rem;border-radius:9999px;text-transform:uppercase;letter-spacing:0.1em;white-space:nowrap;">Most Popular</div>
+                <h3 style="font-size:1.25rem;font-weight:500;color:#00d9ff;margin-bottom:0.5rem;">Premium</h3>
+                <div style="display:flex;align-items:baseline;gap:0.25rem;margin-bottom:2rem;">
+                    <span style="font-size:3rem;font-family:'Poppins',sans-serif;font-weight:700;color:#fff;">$0.60</span>
+                    <span style="color:#94a3b8;">/mo</span>
+                </div>
+                <ul style="list-style:none;padding:0;display:flex;flex-direction:column;gap:1rem;margin-bottom:2rem;flex:1;">
+                    <li style="display:flex;align-items:center;gap:0.75rem;font-size:0.875rem;color:#fff;"><i class="ph-fill ph-check-circle" style="color:#00d9ff;"></i> Up to 10 uploads/day</li>
+                    <li style="display:flex;align-items:center;gap:0.75rem;font-size:0.875rem;color:#fff;"><i class="ph-fill ph-check-circle" style="color:#00d9ff;"></i> HD media quality</li>
+                    <li style="display:flex;align-items:center;gap:0.75rem;font-size:0.875rem;color:#fff;"><i class="ph-fill ph-check-circle" style="color:#00d9ff;"></i> 5 Premium themes</li>
+                    <li style="display:flex;align-items:center;gap:0.75rem;font-size:0.875rem;color:#fff;"><i class="ph-fill ph-check-circle" style="color:#00d9ff;"></i> Early access features</li>
+                </ul>
+                <button style="width:100%;padding:1rem;border-radius:0.75rem;background:#fff;color:#000;font-weight:600;cursor:pointer;box-shadow:0 0 20px rgba(255,255,255,0.2);transition:all 0.2s;" onmouseover="this.style.background='#00d9ff'" onmouseout="this.style.background='#fff'">Upgrade Now</button>
+            </div>
+
+            <!-- Lifetime -->
+            <div class="glass-panel glass-panel-hover reveal" style="border-radius:1.5rem;padding:2rem;display:flex;flex-direction:column;position:relative;border-color:rgba(56,189,248,0.3);overflow:hidden;transition:all 0.3s ease;" onmouseover="this.style.transform='translateY(-8px)'" onmouseout="this.style.transform='translateY(0)'">
+                <div style="position:absolute;top:0;right:0;width:8rem;height:8rem;background:rgba(56,189,248,0.2);filter:blur(3rem);border-radius:50%;"></div>
+                <h3 style="font-size:1.25rem;font-weight:500;color:#38bdf8;margin-bottom:0.5rem;">Lifetime</h3>
+                <div style="display:flex;align-items:baseline;gap:0.25rem;margin-bottom:0.5rem;">
+                    <span style="font-size:2.5rem;font-family:'Poppins',sans-serif;font-weight:700;color:#fff;">$12</span>
+                </div>
+                <p style="font-size:0.875rem;color:rgba(56,189,248,0.8);margin-bottom:1.5rem;">Valid for 3 years.</p>
+                <ul style="list-style:none;padding:0;display:flex;flex-direction:column;gap:1rem;margin-bottom:2rem;flex:1;">
+                    <li style="display:flex;align-items:center;gap:0.75rem;font-size:0.875rem;color:#cbd5e1;"><i class="ph ph-infinity" style="color:#38bdf8;"></i> Unlimited uploads</li>
+                    <li style="display:flex;align-items:center;gap:0.75rem;font-size:0.875rem;color:#cbd5e1;"><i class="ph ph-seal-check" style="color:#38bdf8;"></i> Verified founder badge</li>
+                    <li style="display:flex;align-items:center;gap:0.75rem;font-size:0.875rem;color:#cbd5e1;"><i class="ph ph-magic-wand" style="color:#38bdf8;"></i> AI positive captions</li>
+                    <li style="display:flex;align-items:center;gap:0.75rem;font-size:0.875rem;color:#cbd5e1;"><i class="ph ph-palette" style="color:#38bdf8;"></i> All themes unlocked</li>
+                </ul>
+                <button style="width:100%;padding:1rem;border-radius:0.75rem;border:1px solid #38bdf8;background:transparent;color:#38bdf8;font-weight:500;cursor:pointer;transition:all 0.2s;" onmouseover="this.style.background='#38bdf8';this.style.color='#000'" onmouseout="this.style.background='transparent';this.style.color='#38bdf8'">Get Lifetime Access</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======= COMMUNITY / LIVE FEED ======= -->
+    <section id="community" style="padding:6rem 1.5rem;position:relative;z-index:10;background:linear-gradient(to bottom,transparent,rgba(15,23,42,0.3),transparent);overflow:hidden;">
+        <div class="max-w-7xl mx-auto" style="display:grid;grid-template-columns:5fr 7fr;gap:3rem;align-items:center;margin-bottom:4rem;">
+
+            <div class="reveal">
+                <h2 style="font-size:clamp(1.75rem,3vw,2.25rem);font-family:'Poppins',sans-serif;font-weight:700;margin-bottom:1rem;">Live Community Wall</h2>
+                <p style="color:#94a3b8;margin-bottom:2rem;">Share how Postify makes you feel. Your energy is broadcasted to the community in real-time.</p>
+
+                <div class="glass-panel" style="padding:2rem;border-radius:1.5rem;border:1px solid rgba(255,255,255,0.1);box-shadow:0 0 40px rgba(0,0,0,0.5);">
+                    <form id="feedback-form" onsubmit="submitFeedback(event)">
+                        <div style="margin-bottom:1.25rem;">
+                            <input type="text" id="fb-name" placeholder="Your Name" required style="width:100%;background:rgba(0,0,0,0.4);border:1px solid rgba(255,255,255,0.1);border-radius:0.75rem;padding:1rem 1.25rem;color:#fff;font-size:0.875rem;outline:none;box-sizing:border-box;transition:border-color 0.2s;" onfocus="this.style.borderColor='#00d9ff'" onblur="this.style.borderColor='rgba(255,255,255,0.1)'" placeholder="Your Name">
+                        </div>
+                        <div style="margin-bottom:1.25rem;">
+                            <textarea id="fb-message" placeholder="How do you feel today?" required rows="3" style="width:100%;background:rgba(0,0,0,0.4);border:1px solid rgba(255,255,255,0.1);border-radius:0.75rem;padding:1rem 1.25rem;color:#fff;font-size:0.875rem;outline:none;resize:none;box-sizing:border-box;transition:border-color 0.2s;font-family:'Inter',sans-serif;" onfocus="this.style.borderColor='#00d9ff'" onblur="this.style.borderColor='rgba(255,255,255,0.1)'"></textarea>
+                        </div>
+                        <div style="
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:1.5rem;
+padding-top:0.75rem;
+border-top:1px solid rgba(255,255,255,0.1);
+">
+
+    <div style="display:flex;gap:0.5rem;font-size:1.5rem;color:#475569;" id="rating-hearts">
+        <i class="ph-fill ph-heart" style="cursor:pointer;transition:all 0.2s;" onclick="setRating(1)" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'"></i>
+
+        <i class="ph-fill ph-heart" style="cursor:pointer;transition:all 0.2s;" onclick="setRating(2)" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'"></i>
+
+        <i class="ph-fill ph-heart" style="cursor:pointer;transition:all 0.2s;" onclick="setRating(3)" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'"></i>
+
+        <i class="ph-fill ph-heart" style="cursor:pointer;transition:all 0.2s;" onclick="setRating(4)" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'"></i>
+
+        <i class="ph-fill ph-heart" style="cursor:pointer;transition:all 0.2s;" onclick="setRating(5)" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'"></i>
+    </div>
+
+    <button 
+    type="submit" 
+    style="
+    background:#00d9ff;
+    color:#000;
+    width:100px;
+    height:40px;
+    border-radius:0.75rem;
+    font-weight:500;
+    border:none;
+    cursor:pointer;
+    transition:all 0.2s;
+    margin-left:1rem;
+    "
+    onmouseover="
+    this.style.background='#fff';
+    this.style.boxShadow='0 0 20px rgba(0,217,255,0.4)';
+    this.style.transform='translateY(-2px)'
+    "
+    onmouseout="
+    this.style.background='#00d9ff';
+    this.style.boxShadow='';
+    this.style.transform='translateY(0)'
+    ">
+        Post Vibe
+    </button>
+
+</div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Scrolling Testimonials -->
+            <div class="reveal" style="position:relative;min-height:450px;">
+                <div style="position:relative;width:100%;overflow:hidden;display:flex;align-items:center;height:450px;padding:2.5rem 0;">
+                    <div style="position:absolute;inset-y:0;left:0;width:10rem;background:linear-gradient(to right,#050816,transparent);z-index:10;pointer-events:none;"></div>
+                    <div style="position:absolute;inset-y:0;right:0;width:10rem;background:linear-gradient(to left,#050816,transparent);z-index:10;pointer-events:none;"></div>
+
+                    <div id="live-feed-track" class="animate-scroll-x" style="display:flex;gap:2rem;width:max-content;padding:0 1rem;align-items:center;">
+                        <!-- Cards duplicated for seamless loop -->
+                        <div class="feedback-card" style="width:340px;padding:2rem;flex-shrink:0;position:relative;" onmouseover="this.style.animationPlayState='paused'" onmouseout="">
+                            <div class="feedback-quote-mark">"</div>
+                            <div style="position:absolute;top:0;left:0;width:100%;height:4px;background:linear-gradient(to right,#f97316,#ec4899);opacity:0.5;"></div>
+                            <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1.5rem;position:relative;z-index:10;">
+                                <div style="display:flex;align-items:center;gap:1rem;">
+                                    <div style="width:3rem;height:3rem;border-radius:50%;background:linear-gradient(135deg,#f97316,#ec4899);display:flex;align-items:center;justify-content:center;font-weight:700;color:#fff;font-size:1.125rem;">P</div>
+                                    <div><span style="font-weight:700;color:#fff;display:block;font-size:1.125rem;">Priya S.</span><span style="font-size:0.75rem;color:#00d9ff;font-weight:500;text-transform:uppercase;">Mumbai, IN</span></div>
+                                </div>
+                                <div style="display:flex;color:#00d9ff;font-size:0.875rem;filter:drop-shadow(0 0 8px rgba(0,217,255,0.8));"><i class="ph-fill ph-heart"></i><i class="ph-fill ph-heart"></i><i class="ph-fill ph-heart"></i><i class="ph-fill ph-heart"></i><i class="ph-fill ph-heart"></i></div>
+                            </div>
+                            <p style="font-size:1rem;color:#cbd5e1;line-height:1.625;position:relative;z-index:10;font-weight:300;">"Board exams anxiety is real. Postify is the only place where I'm not comparing marks or fake lives. Pure sukoon. ✨"</p>
+                        </div>
+                        <div class="feedback-card" style="width:340px;padding:2rem;flex-shrink:0;position:relative;">
+                            <div class="feedback-quote-mark">"</div>
+                            <div style="position:absolute;top:0;left:0;width:100%;height:4px;background:linear-gradient(to right,#3b82f6,#06b6d4);opacity:0.5;"></div>
+                            <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1.5rem;position:relative;z-index:10;">
+                                <div style="display:flex;align-items:center;gap:1rem;">
+                                    <div style="width:3rem;height:3rem;border-radius:50%;background:linear-gradient(135deg,#3b82f6,#06b6d4);display:flex;align-items:center;justify-content:center;font-weight:700;color:#000;font-size:1.125rem;">R</div>
+                                    <div><span style="font-weight:700;color:#fff;display:block;font-size:1.125rem;">Rahul K.</span><span style="font-size:0.75rem;color:#00d9ff;font-weight:500;text-transform:uppercase;">Delhi, IN</span></div>
+                                </div>
+                                <div style="display:flex;color:#00d9ff;font-size:0.875rem;filter:drop-shadow(0 0 8px rgba(0,217,255,0.8));"><i class="ph-fill ph-heart"></i><i class="ph-fill ph-heart"></i><i class="ph-fill ph-heart"></i><i class="ph-fill ph-heart"></i><i class="ph-fill ph-heart"></i></div>
+                            </div>
+                            <p style="font-size:1rem;color:#cbd5e1;line-height:1.625;position:relative;z-index:10;font-weight:300;">"Finally an app away from toxic political debates. No comment section means no pointless arguments. Best Indian-friendly space."</p>
+                        </div>
+                        <div class="feedback-card" style="width:340px;padding:2rem;flex-shrink:0;position:relative;">
+                            <div class="feedback-quote-mark">"</div>
+                            <div style="position:absolute;top:0;left:0;width:100%;height:4px;background:linear-gradient(to right,#a855f7,#6366f1);opacity:0.5;"></div>
+                            <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1.5rem;position:relative;z-index:10;">
+                                <div style="display:flex;align-items:center;gap:1rem;">
+                                    <div style="width:3rem;height:3rem;border-radius:50%;background:linear-gradient(135deg,#a855f7,#6366f1);display:flex;align-items:center;justify-content:center;font-weight:700;color:#fff;font-size:1.125rem;">A</div>
+                                    <div><span style="font-weight:700;color:#fff;display:block;font-size:1.125rem;">Ananya D.</span><span style="font-size:0.75rem;color:#00d9ff;font-weight:500;text-transform:uppercase;">Bengaluru, IN</span></div>
+                                </div>
+                                <div style="display:flex;color:#00d9ff;font-size:0.875rem;filter:drop-shadow(0 0 8px rgba(0,217,255,0.8));"><i class="ph-fill ph-heart"></i><i class="ph-fill ph-heart"></i><i class="ph-fill ph-heart"></i><i class="ph-fill ph-heart"></i></div>
+                            </div>
+                            <p style="font-size:1rem;color:#cbd5e1;line-height:1.625;position:relative;z-index:10;font-weight:300;">"No relatives commenting 'Beta when are you getting married?' on my posts! 😂 Absolute total freedom to just be myself."</p>
+                        </div>
+                        <div class="feedback-card" style="width:340px;padding:2rem;flex-shrink:0;position:relative;">
+                            <div class="feedback-quote-mark">"</div>
+                            <div style="position:absolute;top:0;left:0;width:100%;height:4px;background:linear-gradient(to right,#60a5fa,#6366f1);opacity:0.5;"></div>
+                            <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1.5rem;position:relative;z-index:10;">
+                                <div style="display:flex;align-items:center;gap:1rem;">
+                                    <div style="width:3rem;height:3rem;border-radius:50%;background:linear-gradient(135deg,#60a5fa,#6366f1);display:flex;align-items:center;justify-content:center;font-weight:700;color:#fff;font-size:1.125rem;">K</div>
+                                    <div><span style="font-weight:700;color:#fff;display:block;font-size:1.125rem;">Karthik M.</span><span style="font-size:0.75rem;color:#00d9ff;font-weight:500;text-transform:uppercase;">Bengaluru, IN</span></div>
+                                </div>
+                                <div style="display:flex;color:#00d9ff;font-size:0.875rem;filter:drop-shadow(0 0 8px rgba(0,217,255,0.8));"><i class="ph-fill ph-heart"></i><i class="ph-fill ph-heart"></i><i class="ph-fill ph-heart"></i><i class="ph-fill ph-heart"></i><i class="ph-fill ph-heart"></i></div>
+                            </div>
+                            <p style="font-size:1rem;color:#cbd5e1;line-height:1.625;position:relative;z-index:10;font-weight:300;">"No 'thrilled to announce' posts or toxic hustle culture. Just genuine moments after a long day at the IT park. Real peace at last."</p>
+                        </div>
+                        <div class="feedback-card" style="width:340px;padding:2rem;flex-shrink:0;position:relative;">
+                            <div class="feedback-quote-mark">"</div>
+                            <div style="position:absolute;top:0;left:0;width:100%;height:4px;background:linear-gradient(to right,#34d399,#14b8a6);opacity:0.5;"></div>
+                            <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1.5rem;position:relative;z-index:10;">
+                                <div style="display:flex;align-items:center;gap:1rem;">
+                                    <div style="width:3rem;height:3rem;border-radius:50%;background:linear-gradient(135deg,#34d399,#14b8a6);display:flex;align-items:center;justify-content:center;font-weight:700;color:#000;font-size:1.125rem;">N</div>
+                                    <div><span style="font-weight:700;color:#fff;display:block;font-size:1.125rem;">Neha V.</span><span style="font-size:0.75rem;color:#00d9ff;font-weight:500;text-transform:uppercase;">Pune, IN</span></div>
+                                </div>
+                                <div style="display:flex;color:#00d9ff;font-size:0.875rem;filter:drop-shadow(0 0 8px rgba(0,217,255,0.8));"><i class="ph-fill ph-heart"></i><i class="ph-fill ph-heart"></i><i class="ph-fill ph-heart"></i><i class="ph-fill ph-heart"></i></div>
+                            </div>
+                            <p style="font-size:1rem;color:#cbd5e1;line-height:1.625;position:relative;z-index:10;font-weight:300;">"Way better than waking up to 50 'Good Morning' WhatsApp forwards and family drama. Just aesthetic photos and good vibes here."</p>
+                        </div>
+                        <div class="feedback-card" style="width:340px;padding:2rem;flex-shrink:0;position:relative;">
+                            <div class="feedback-quote-mark">"</div>
+                            <div style="position:absolute;top:0;left:0;width:100%;height:4px;background:linear-gradient(to right,#f472b6,#fb7185);opacity:0.5;"></div>
+                            <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1.5rem;position:relative;z-index:10;">
+                                <div style="display:flex;align-items:center;gap:1rem;">
+                                    <div style="width:3rem;height:3rem;border-radius:50%;background:linear-gradient(135deg,#f472b6,#fb7185);display:flex;align-items:center;justify-content:center;font-weight:700;color:#fff;font-size:1.125rem;">S</div>
+                                    <div><span style="font-weight:700;color:#fff;display:block;font-size:1.125rem;">Simran K.</span><span style="font-size:0.75rem;color:#00d9ff;font-weight:500;text-transform:uppercase;">Chandigarh, IN</span></div>
+                                </div>
+                                <div style="display:flex;color:#00d9ff;font-size:0.875rem;filter:drop-shadow(0 0 8px rgba(0,217,255,0.8));"><i class="ph-fill ph-heart"></i><i class="ph-fill ph-heart"></i><i class="ph-fill ph-heart"></i><i class="ph-fill ph-heart"></i><i class="ph-fill ph-heart"></i></div>
+                            </div>
+                            <p style="font-size:1rem;color:#cbd5e1;line-height:1.625;position:relative;z-index:10;font-weight:300;">"Wedding season used to give me major FOMO. On Postify, I just post my outfit and move on. Zero pressure to look perfect for society."</p>
+                        </div>
+                        <div class="feedback-card" style="width:340px;padding:2rem;flex-shrink:0;position:relative;">
+                            <div class="feedback-quote-mark">"</div>
+                            <div style="position:absolute;top:0;left:0;width:100%;height:4px;background:linear-gradient(to right,#facc15,#f97316);opacity:0.5;"></div>
+                            <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1.5rem;position:relative;z-index:10;">
+                                <div style="display:flex;align-items:center;gap:1rem;">
+                                    <div style="width:3rem;height:3rem;border-radius:50%;background:linear-gradient(135deg,#facc15,#f97316);display:flex;align-items:center;justify-content:center;font-weight:700;color:#000;font-size:1.125rem;">A</div>
+                                    <div><span style="font-weight:700;color:#fff;display:block;font-size:1.125rem;">Aman J.</span><span style="font-size:0.75rem;color:#00d9ff;font-weight:500;text-transform:uppercase;">Hyderabad, IN</span></div>
+                                </div>
+                                <div style="display:flex;color:#00d9ff;font-size:0.875rem;filter:drop-shadow(0 0 8px rgba(0,217,255,0.8));"><i class="ph-fill ph-heart"></i><i class="ph-fill ph-heart"></i><i class="ph-fill ph-heart"></i><i class="ph-fill ph-heart"></i><i class="ph-fill ph-heart"></i></div>
+                            </div>
+                            <p style="font-size:1rem;color:#cbd5e1;line-height:1.625;position:relative;z-index:10;font-weight:300;">"Switched from other apps a month ago. My screen time is down, but my happiness is up. The feed is just beautiful and peaceful."</p>
+                        </div>
+                        <div class="feedback-card" style="width:340px;padding:2rem;flex-shrink:0;position:relative;">
+                            <div class="feedback-quote-mark">"</div>
+                            <div style="position:absolute;top:0;left:0;width:100%;height:4px;background:linear-gradient(to right,#2dd4bf,#34d399);opacity:0.5;"></div>
+                            <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1.5rem;position:relative;z-index:10;">
+                                <div style="display:flex;align-items:center;gap:1rem;">
+                                    <div style="width:3rem;height:3rem;border-radius:50%;background:linear-gradient(135deg,#2dd4bf,#34d399);display:flex;align-items:center;justify-content:center;font-weight:700;color:#fff;font-size:1.125rem;">S</div>
+                                    <div><span style="font-weight:700;color:#fff;display:block;font-size:1.125rem;">Sneha T.</span><span style="font-size:0.75rem;color:#00d9ff;font-weight:500;text-transform:uppercase;">Kolkata, IN</span></div>
+                                </div>
+                                <div style="display:flex;color:#00d9ff;font-size:0.875rem;filter:drop-shadow(0 0 8px rgba(0,217,255,0.8));"><i class="ph-fill ph-heart"></i><i class="ph-fill ph-heart"></i><i class="ph-fill ph-heart"></i><i class="ph-fill ph-heart"></i><i class="ph-fill ph-heart"></i></div>
+                            </div>
+                            <p style="font-size:1rem;color:#cbd5e1;line-height:1.625;position:relative;z-index:10;font-weight:300;">"I can finally post my poetry without worrying about trolls picking it apart. It's truly a safe space for creatives in India."</p>
+                        </div>
+                        <div class="feedback-card" style="width:340px;padding:2rem;flex-shrink:0;position:relative;">
+                            <div class="feedback-quote-mark">"</div>
+                            <div style="position:absolute;top:0;left:0;width:100%;height:4px;background:linear-gradient(to right,#818cf8,#a855f7);opacity:0.5;"></div>
+                            <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1.5rem;position:relative;z-index:10;">
+                                <div style="display:flex;align-items:center;gap:1rem;">
+                                    <div style="width:3rem;height:3rem;border-radius:50%;background:linear-gradient(135deg,#818cf8,#a855f7);display:flex;align-items:center;justify-content:center;font-weight:700;color:#fff;font-size:1.125rem;">V</div>
+                                    <div><span style="font-weight:700;color:#fff;display:block;font-size:1.125rem;">Vikram R.</span><span style="font-size:0.75rem;color:#00d9ff;font-weight:500;text-transform:uppercase;">Chennai, IN</span></div>
+                                </div>
+                                <div style="display:flex;color:#00d9ff;font-size:0.875rem;filter:drop-shadow(0 0 8px rgba(0,217,255,0.8));"><i class="ph-fill ph-heart"></i><i class="ph-fill ph-heart"></i><i class="ph-fill ph-heart"></i><i class="ph-fill ph-heart"></i></div>
+                            </div>
+                            <p style="font-size:1rem;color:#cbd5e1;line-height:1.625;position:relative;z-index:10;font-weight:300;">"No doomscrolling. I open the app, see beautiful updates from real people, leave a heart, and go back to my life."</p>
+                        </div>
+                        <div class="feedback-card" style="width:340px;padding:2rem;flex-shrink:0;position:relative;">
+                            <div class="feedback-quote-mark">"</div>
+                            <div style="position:absolute;top:0;left:0;width:100%;height:4px;background:linear-gradient(to right,#fb7185,#f472b6);opacity:0.5;"></div>
+                            <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1.5rem;position:relative;z-index:10;">
+                                <div style="display:flex;align-items:center;gap:1rem;">
+                                    <div style="width:3rem;height:3rem;border-radius:50%;background:linear-gradient(135deg,#fb7185,#f472b6);display:flex;align-items:center;justify-content:center;font-weight:700;color:#fff;font-size:1.125rem;">M</div>
+                                    <div><span style="font-weight:700;color:#fff;display:block;font-size:1.125rem;">Maya P.</span><span style="font-size:0.75rem;color:#00d9ff;font-weight:500;text-transform:uppercase;">Ahmedabad, IN</span></div>
+                                </div>
+                                <div style="display:flex;color:#00d9ff;font-size:0.875rem;filter:drop-shadow(0 0 8px rgba(0,217,255,0.8));"><i class="ph-fill ph-heart"></i><i class="ph-fill ph-heart"></i><i class="ph-fill ph-heart"></i><i class="ph-fill ph-heart"></i><i class="ph-fill ph-heart"></i></div>
+                            </div>
+                            <p style="font-size:1rem;color:#cbd5e1;line-height:1.625;position:relative;z-index:10;font-weight:300;">"The fact that nobody can see how many people follow me takes away 99% of the pressure. Best social app I've used."</p>
+                        </div>
+                        <!-- Duplicate set for seamless loop -->
+                        <div class="feedback-card" style="width:340px;padding:2rem;flex-shrink:0;position:relative;">
+                            <div class="feedback-quote-mark">"</div>
+                            <div style="position:absolute;top:0;left:0;width:100%;height:4px;background:linear-gradient(to right,#f97316,#ec4899);opacity:0.5;"></div>
+                            <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1.5rem;position:relative;z-index:10;">
+                                <div style="display:flex;align-items:center;gap:1rem;">
+                                    <div style="width:3rem;height:3rem;border-radius:50%;background:linear-gradient(135deg,#f97316,#ec4899);display:flex;align-items:center;justify-content:center;font-weight:700;color:#fff;font-size:1.125rem;">P</div>
+                                    <div><span style="font-weight:700;color:#fff;display:block;font-size:1.125rem;">Priya S.</span><span style="font-size:0.75rem;color:#00d9ff;font-weight:500;text-transform:uppercase;">Mumbai, IN</span></div>
+                                </div>
+                                <div style="display:flex;color:#00d9ff;font-size:0.875rem;"><i class="ph-fill ph-heart"></i><i class="ph-fill ph-heart"></i><i class="ph-fill ph-heart"></i><i class="ph-fill ph-heart"></i><i class="ph-fill ph-heart"></i></div>
+                            </div>
+                            <p style="font-size:1rem;color:#cbd5e1;line-height:1.625;position:relative;z-index:10;font-weight:300;">"Board exams anxiety is real. Postify is the only place where I'm not comparing marks or fake lives. Pure sukoon. ✨"</p>
+                        </div>
+                        <div class="feedback-card" style="width:340px;padding:2rem;flex-shrink:0;position:relative;">
+                            <div class="feedback-quote-mark">"</div>
+                            <div style="position:absolute;top:0;left:0;width:100%;height:4px;background:linear-gradient(to right,#3b82f6,#06b6d4);opacity:0.5;"></div>
+                            <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1.5rem;position:relative;z-index:10;">
+                                <div style="display:flex;align-items:center;gap:1rem;">
+                                    <div style="width:3rem;height:3rem;border-radius:50%;background:linear-gradient(135deg,#3b82f6,#06b6d4);display:flex;align-items:center;justify-content:center;font-weight:700;color:#000;font-size:1.125rem;">R</div>
+                                    <div><span style="font-weight:700;color:#fff;display:block;font-size:1.125rem;">Rahul K.</span><span style="font-size:0.75rem;color:#00d9ff;font-weight:500;text-transform:uppercase;">Delhi, IN</span></div>
+                                </div>
+                                <div style="display:flex;color:#00d9ff;font-size:0.875rem;"><i class="ph-fill ph-heart"></i><i class="ph-fill ph-heart"></i><i class="ph-fill ph-heart"></i><i class="ph-fill ph-heart"></i><i class="ph-fill ph-heart"></i></div>
+                            </div>
+                            <p style="font-size:1rem;color:#cbd5e1;line-height:1.625;position:relative;z-index:10;font-weight:300;">"Finally an app away from toxic political debates. No comment section means no pointless arguments. Best Indian-friendly space."</p>
+                        </div>
+                        <div class="feedback-card" style="width:340px;padding:2rem;flex-shrink:0;position:relative;">
+                            <div class="feedback-quote-mark">"</div>
+                            <div style="position:absolute;top:0;left:0;width:100%;height:4px;background:linear-gradient(to right,#facc15,#f97316);opacity:0.5;"></div>
+                            <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1.5rem;position:relative;z-index:10;">
+                                <div style="display:flex;align-items:center;gap:1rem;">
+                                    <div style="width:3rem;height:3rem;border-radius:50%;background:linear-gradient(135deg,#facc15,#f97316);display:flex;align-items:center;justify-content:center;font-weight:700;color:#000;font-size:1.125rem;">A</div>
+                                    <div><span style="font-weight:700;color:#fff;display:block;font-size:1.125rem;">Aman J.</span><span style="font-size:0.75rem;color:#00d9ff;font-weight:500;text-transform:uppercase;">Hyderabad, IN</span></div>
+                                </div>
+                                <div style="display:flex;color:#00d9ff;font-size:0.875rem;"><i class="ph-fill ph-heart"></i><i class="ph-fill ph-heart"></i><i class="ph-fill ph-heart"></i><i class="ph-fill ph-heart"></i><i class="ph-fill ph-heart"></i></div>
+                            </div>
+                            <p style="font-size:1rem;color:#cbd5e1;line-height:1.625;position:relative;z-index:10;font-weight:300;">"Switched from other apps a month ago. My screen time is down, but my happiness is up. The feed is just beautiful and peaceful."</p>
+                        </div>
+                        <div class="feedback-card" style="width:340px;padding:2rem;flex-shrink:0;position:relative;">
+                            <div class="feedback-quote-mark">"</div>
+                            <div style="position:absolute;top:0;left:0;width:100%;height:4px;background:linear-gradient(to right,#fb7185,#f472b6);opacity:0.5;"></div>
+                            <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1.5rem;position:relative;z-index:10;">
+                                <div style="display:flex;align-items:center;gap:1rem;">
+                                    <div style="width:3rem;height:3rem;border-radius:50%;background:linear-gradient(135deg,#fb7185,#f472b6);display:flex;align-items:center;justify-content:center;font-weight:700;color:#fff;font-size:1.125rem;">M</div>
+                                    <div><span style="font-weight:700;color:#fff;display:block;font-size:1.125rem;">Maya P.</span><span style="font-size:0.75rem;color:#00d9ff;font-weight:500;text-transform:uppercase;">Ahmedabad, IN</span></div>
+                                </div>
+                                <div style="display:flex;color:#00d9ff;font-size:0.875rem;"><i class="ph-fill ph-heart"></i><i class="ph-fill ph-heart"></i><i class="ph-fill ph-heart"></i><i class="ph-fill ph-heart"></i><i class="ph-fill ph-heart"></i></div>
+                            </div>
+                            <p style="font-size:1rem;color:#cbd5e1;line-height:1.625;position:relative;z-index:10;font-weight:300;">"The fact that nobody can see how many people follow me takes away 99% of the pressure. Best social app I've used."</p>
+                        </div>
+                    </div>
+                </div>
+                <style>#live-feed-track:hover { animation-play-state: paused; }</style>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======= DOWNLOAD / FAQ ======= -->
+    <section id="download" style="padding:6rem 1.5rem;position:relative;z-index:10;">
+        <div class="max-w-5xl mx-auto" style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;">
+            <!-- FAQ -->
+            <div class="reveal">
+                <h3 style="font-size:1.5rem;font-family:'Poppins',sans-serif;font-weight:700;margin-bottom:2rem;">Frequently Asked</h3>
+                <div style="display:flex;flex-direction:column;gap:1rem;" id="faq-container">
+                    <div class="glass-panel faq-item" style="border-radius:1rem;overflow:hidden;transition:all 0.3s;">
+                        <button style="width:100%;padding:1rem 1.5rem;text-align:left;font-weight:500;display:flex;justify-content:space-between;align-items:center;background:transparent;border:none;color:#fff;cursor:pointer;font-size:0.875rem;font-family:'Inter',sans-serif;" onclick="toggleFaq(this)">
+                            Why no comments?
+                            <i class="ph ph-caret-down" style="transition:transform 0.3s;"></i>
+                        </button>
+                        <div class="faq-content hidden" style="padding:0 1.5rem 1rem;font-size:0.875rem;color:#94a3b8;">
+                            We believe true expression shouldn't be subject to public debate. Removing comments eliminates toxicity, judgment, and anxiety, creating a safe space to share.
+                        </div>
+                    </div>
+                    <div class="glass-panel faq-item" style="border-radius:1rem;overflow:hidden;transition:all 0.3s;">
+                        <button style="width:100%;padding:1rem 1.5rem;text-align:left;font-weight:500;display:flex;justify-content:space-between;align-items:center;background:transparent;border:none;color:#fff;cursor:pointer;font-size:0.875rem;font-family:'Inter',sans-serif;" onclick="toggleFaq(this)">
+                            Is my data safe?
+                            <i class="ph ph-caret-down" style="transition:transform 0.3s;"></i>
+                        </button>
+                        <div class="faq-content hidden" style="padding:0 1.5rem 1rem;font-size:0.875rem;color:#94a3b8;">
+                            Absolutely. We use end-to-end encryption for your private data and we never sell your information to advertisers. You are the customer, not the product.
+                        </div>
+                    </div>
+                    <div class="glass-panel faq-item" style="border-radius:1rem;overflow:hidden;transition:all 0.3s;">
+                        <button style="width:100%;padding:1rem 1.5rem;text-align:left;font-weight:500;display:flex;justify-content:space-between;align-items:center;background:transparent;border:none;color:#fff;cursor:pointer;font-size:0.875rem;font-family:'Inter',sans-serif;" onclick="toggleFaq(this)">
+                            When is Play Store launch?
+                            <i class="ph ph-caret-down" style="transition:transform 0.3s;"></i>
+                        </button>
+                        <div class="faq-content hidden" style="padding:0 1.5rem 1rem;font-size:0.875rem;color:#94a3b8;">
+                            We are currently in exclusive Beta via direct APK. Play Store launch is scheduled for Q3. Secure your early access account now.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- APK Card -->
+            <div class="reveal">
+                <div style="position:relative;border-radius:1.5rem;padding:1px;overflow:hidden;" class="group">
+                    <span style="position:absolute;inset:-1000%;animation:spin 4s linear infinite;background:conic-gradient(from 90deg at 50% 50%,#00d9ff 0%,#050816 50%,#00d9ff 100%);opacity:0.5;"></span>
+                    <div style="position:relative;background:#0f172a;width:100%;border-radius:1.5rem;padding:2rem;display:flex;flex-direction:column;align-items:center;text-align:center;">
+                        <div class="animate-float" style="width:5rem;height:5rem;background:linear-gradient(135deg,#00d9ff,#38bdf8);border-radius:1rem;display:flex;align-items:center;justify-content:center;margin-bottom:1.5rem;box-shadow:0 0 30px rgba(0,217,255,0.4);">
+                            <i class="ph-fill ph-android-logo" style="font-size:2.5rem;color:#fff;"></i>
+                        </div>
+                        <h3 style="font-size:1.5rem;font-weight:700;margin-bottom:0.5rem;">Get Postify Beta</h3>
+                        <p style="color:#94a3b8;font-size:0.875rem;margin-bottom:1.5rem;">Experience the future of peaceful social media.</p>
+
+                        <div style="width:100%;background:#050816;border-radius:0.75rem;padding:1rem;margin-bottom:1.5rem;display:flex;justify-content:space-between;align-items:center;border:1px solid rgba(255,255,255,0.05);font-size:0.875rem;">
+                            <div style="text-align:left;">
+                                <div style="color:#64748b;">Version</div>
+                                <div style="font-family:monospace;color:#fff;">v0.9.4 Beta</div>
+                            </div>
+                            <div style="text-align:right;">
+                                <div style="color:#64748b;">Size</div>
+                                <div style="font-family:monospace;color:#fff;">24.5 MB</div>
+                            </div>
+                        </div>
+
+                        <button style="width:100%;padding:1rem;border-radius:0.75rem;background:#fff;color:#000;font-weight:700;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:0.5rem;transition:all 0.2s;font-size:0.875rem;" onclick="simulateDownload(this)" onmouseover="this.style.background='#00d9ff';this.style.boxShadow='0 0 20px rgba(138,190,224,0.5)'" onmouseout="this.style.background='#fff';this.style.boxShadow=''">
+                            <i class="ph ph-download-simple" style="font-size:1.25rem;"></i> Download APK Now
+                        </button>
+
+                        <div style="margin-top:1rem;display:flex;align-items:center;gap:0.5rem;font-size:0.75rem;color:#00d9ff;justify-content:center;">
+                            <i class="ph-fill ph-shield-check"></i> Verified Secure Build
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======= FOOTER ======= -->
+    <footer style="border-top:1px solid rgba(255,255,255,0.1);background:rgba(7,17,31,0.5);backdrop-filter:blur(12px);padding:4rem 1.5rem 2rem;position:relative;z-index:10;">
+        <div style="position:absolute;top:0;left:0;width:100%;height:1px;background:linear-gradient(to right,transparent,#00d9ff,transparent);opacity:0.5;"></div>
+        <div class="max-w-7xl mx-auto" style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:2rem;margin-bottom:3rem;">
+            <div>
+                <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:1rem;">
+                    <div style="width:1.5rem;height:1.5rem;border-radius:50%;background:#00d9ff;display:flex;align-items:center;justify-content:center;">
+                        <i class="ph-fill ph-leaf" style="color:#000;font-size:0.75rem;"></i>
+                    </div>
+                    <span style="font-family:'Poppins',sans-serif;font-weight:700;font-size:1.125rem;">Postify</span>
+                </div>
+                <p style="font-size:0.875rem;color:#64748b;margin-bottom:1.5rem;">Designing a safer, quieter, and more beautiful digital world for everyone.</p>
+                <div style="display:flex;gap:1rem;">
+                    <a href="#" style="color:#94a3b8;text-decoration:none;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#94a3b8'"><i class="ph ph-twitter-logo" style="font-size:1.25rem;"></i></a>
+                    <a href="#" style="color:#94a3b8;text-decoration:none;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#94a3b8'"><i class="ph ph-instagram-logo" style="font-size:1.25rem;"></i></a>
+                </div>
+            </div>
+            <div>
+                <h4 style="font-weight:600;margin-bottom:1rem;color:#fff;">Product</h4>
+                <ul style="list-style:none;padding:0;display:flex;flex-direction:column;gap:0.5rem;font-size:0.875rem;">
+                    <li><a href="#features" style="color:#94a3b8;text-decoration:none;" onmouseover="this.style.color='#00d9ff'" onmouseout="this.style.color='#94a3b8'">Features</a></li>
+                    <li><a href="#premium" style="color:#94a3b8;text-decoration:none;" onmouseover="this.style.color='#00d9ff'" onmouseout="this.style.color='#94a3b8'">Premium</a></li>
+                    <li><a href="#download" style="color:#94a3b8;text-decoration:none;" onmouseover="this.style.color='#00d9ff'" onmouseout="this.style.color='#94a3b8'">Download</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 style="font-weight:600;margin-bottom:1rem;color:#fff;">Company</h4>
+                <ul style="list-style:none;padding:0;display:flex;flex-direction:column;gap:0.5rem;font-size:0.875rem;">
+                    <li><a href="#" onclick="openModal('modal-company')" style="color:#94a3b8;text-decoration:none;" onmouseover="this.style.color='#00d9ff'" onmouseout="this.style.color='#94a3b8'">About Us</a></li>
+                    <li><a href="#" style="color:#94a3b8;text-decoration:none;" onmouseover="this.style.color='#00d9ff'" onmouseout="this.style.color='#94a3b8'">Careers</a></li>
+                    <li><a href="#" style="color:#94a3b8;text-decoration:none;" onmouseover="this.style.color='#00d9ff'" onmouseout="this.style.color='#94a3b8'">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 style="font-weight:600;margin-bottom:1rem;color:#fff;">Legal</h4>
+                <ul style="list-style:none;padding:0;display:flex;flex-direction:column;gap:0.5rem;font-size:0.875rem;">
+                    <li><a href="#" onclick="openModal('modal-legal')" style="color:#94a3b8;text-decoration:none;" onmouseover="this.style.color='#00d9ff'" onmouseout="this.style.color='#94a3b8'">Privacy Policy</a></li>
+                    <li><a href="#" onclick="openModal('modal-legal')" style="color:#94a3b8;text-decoration:none;" onmouseover="this.style.color='#00d9ff'" onmouseout="this.style.color='#94a3b8'">Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto" style="text-align:center;font-size:0.75rem;color:#475569;border-top:1px solid rgba(255,255,255,0.05);padding-top:2rem;">
+            &copy; 2026 Postify Inc. Handcrafted in California.
+        </div>
+    </footer>
+
+    <!-- ======= MODALS ======= -->
+    <div id="modal-overlay" class="hidden opacity-0" style="position:fixed;inset:0;background:rgba(0,0,0,0.6);backdrop-filter:blur(4px);z-index:50;transition:opacity 0.3s;display:none;align-items:center;justify-content:center;padding:1rem;">
+
+        <!-- Company Modal -->
+        <div id="modal-company" class="modal-content hidden scale-95" style="background:#0f172a;border:1px solid rgba(0,217,255,0.2);border-radius:1.5rem;width:100%;max-width:32rem;box-shadow:0 0 50px rgba(138,190,224,0.1);transform:scale(0.95);transition:transform 0.3s;overflow:hidden;position:relative;">
+            <div style="position:absolute;top:0;right:0;width:8rem;height:8rem;background:rgba(0,217,255,0.1);filter:blur(3rem);border-radius:50%;"></div>
+            <div style="padding:2rem;">
+                <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1.5rem;">
+                    <h3 style="font-size:1.5rem;font-family:'Poppins',sans-serif;font-weight:700;">About Postify</h3>
+                    <button onclick="closeModal()" style="color:#94a3b8;background:transparent;border:none;cursor:pointer;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#94a3b8'"><i class="ph ph-x" style="font-size:1.25rem;"></i></button>
+                </div>
+                <div style="display:flex;flex-direction:column;gap:1rem;color:#cbd5e1;font-size:0.875rem;line-height:1.75;">
+                    <p>Founded by ex-engineers from major social networks, Postify was born out of frustration with toxic algorithms and engagement-baiting mechanics.</p>
+                    <p>We are a small, independent team funded by users, not advertisers. Our mission is to build software that respects your attention and protects your peace.</p>
+                    <div class="glass-panel" style="margin-top:1.5rem;padding:1rem;border-radius:0.75rem;border-left:2px solid #00d9ff;">
+                        <p style="font-weight:500;color:#fff;margin-bottom:0.25rem;">Current Status</p>
+                        <p style="font-size:0.75rem;color:#00d9ff;">All systems operational. Beta Phase 2.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Legal Modal -->
+        <div id="modal-legal" class="modal-content hidden scale-95" style="background:#0f172a;border:1px solid rgba(0,217,255,0.2);border-radius:1.5rem;width:100%;max-width:42rem;box-shadow:0 0 50px rgba(138,190,224,0.1);transform:scale(0.95);transition:transform 0.3s;overflow:hidden;position:relative;display:flex;flex-direction:column;max-height:80vh;">
+            <div style="padding:1.5rem;border-bottom:1px solid rgba(255,255,255,0.1);display:flex;justify-content:space-between;align-items:center;background:rgba(5,8,22,0.5);">
+                <h3 style="font-size:1.25rem;font-family:'Poppins',sans-serif;font-weight:700;">Legal Documents</h3>
+                <button onclick="closeModal()" style="color:#94a3b8;background:transparent;border:none;cursor:pointer;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#94a3b8'"><i class="ph ph-x" style="font-size:1.25rem;"></i></button>
+            </div>
+            <div style="padding:1.5rem;overflow-y:auto;flex:1;font-size:0.875rem;color:#cbd5e1;display:flex;flex-direction:column;gap:1.5rem;">
+                <section>
+                    <h4 style="color:#fff;font-weight:500;font-size:1.125rem;margin-bottom:0.5rem;">Privacy Policy</h4>
+                    <p style="margin-bottom:0.5rem;">Last updated: May 16, 2026</p>
+                    <p>1. Data Collection: We collect minimal data required to run the service. No third-party trackers are installed in the app.</p>
+                    <p>2. Encryption: All direct messages (if implemented in future) and private posts are end-to-end encrypted.</p>
+                </section>
+                <section>
+                    <h4 style="color:#fff;font-weight:500;font-size:1.125rem;margin-bottom:0.5rem;">Terms & Conditions</h4>
+                    <p>By using Postify, you agree to maintain a positive environment. Any attempt to bypass the 'no comments' rule via image text or coordinated harassment will result in immediate lifetime bans.</p>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
