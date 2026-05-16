@@ -1030,35 +1030,53 @@ border-top:1px solid rgba(255,255,255,0.1);
 
             <!-- APK Card -->
             <div class="reveal">
-                <div style="position:relative;border-radius:1.5rem;padding:1px;overflow:hidden;" class="group">
-                    <span style="position:absolute;inset:-1000%;animation:spin 4s linear infinite;background:conic-gradient(from 90deg at 50% 50%,#00d9ff 0%,#050816 50%,#00d9ff 100%);opacity:0.5;"></span>
-                    <div style="position:relative;background:#0f172a;width:100%;border-radius:1.5rem;padding:2rem;display:flex;flex-direction:column;align-items:center;text-align:center;">
-                        <div class="animate-float" style="width:5rem;height:5rem;background:linear-gradient(135deg,#00d9ff,#38bdf8);border-radius:1rem;display:flex;align-items:center;justify-content:center;margin-bottom:1.5rem;box-shadow:0 0 30px rgba(0,217,255,0.4);">
-                            <i class="ph-fill ph-android-logo" style="font-size:2.5rem;color:#fff;"></i>
-                        </div>
-                        <h3 style="font-size:1.5rem;font-weight:700;margin-bottom:0.5rem;">Get Postify Beta</h3>
-                        <p style="color:#94a3b8;font-size:0.875rem;margin-bottom:1.5rem;">Experience the future of peaceful social media.</p>
+    <div style="position:relative;border-radius:1.5rem;padding:1px;overflow:hidden;" class="group">
 
-                        <div style="width:100%;background:#050816;border-radius:0.75rem;padding:1rem;margin-bottom:1.5rem;display:flex;justify-content:space-between;align-items:center;border:1px solid rgba(255,255,255,0.05);font-size:0.875rem;">
-                            <div style="text-align:left;">
-                                <div style="color:#64748b;">Version</div>
-                                <div style="font-family:monospace;color:#fff;">v0.9.4 Beta</div>
-                            </div>
-                            <div style="text-align:right;">
-                                <div style="color:#64748b;">Size</div>
-                                <div style="font-family:monospace;color:#fff;">24.5 MB</div>
-                            </div>
-                        </div>
+        <span style="position:absolute;inset:-1000%;animation:spin 4s linear infinite;background:conic-gradient(from 90deg at 50% 50%,#00d9ff 0%,#050816 50%,#00d9ff 100%);opacity:0.5;"></span>
 
-                        <button style="width:100%;padding:1rem;border-radius:0.75rem;background:#fff;color:#000;font-weight:700;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:0.5rem;transition:all 0.2s;font-size:0.875rem;" onclick="simulateDownload(this)" onmouseover="this.style.background='#00d9ff';this.style.boxShadow='0 0 20px rgba(138,190,224,0.5)'" onmouseout="this.style.background='#fff';this.style.boxShadow=''">
-                            <i class="ph ph-download-simple" style="font-size:1.25rem;"></i> Download APK Now
-                        </button>
+        <div style="position:relative;background:#0f172a;width:100%;border-radius:1.5rem;padding:2rem;display:flex;flex-direction:column;align-items:center;text-align:center;">
 
-                        <div style="margin-top:1rem;display:flex;align-items:center;gap:0.5rem;font-size:0.75rem;color:#00d9ff;justify-content:center;">
-                            <i class="ph-fill ph-shield-check"></i> Verified Secure Build
-                        </div>
-                    </div>
+            <div class="animate-float" style="width:5rem;height:5rem;background:linear-gradient(135deg,#00d9ff,#38bdf8);border-radius:1rem;display:flex;align-items:center;justify-content:center;margin-bottom:1.5rem;box-shadow:0 0 30px rgba(0,217,255,0.4);">
+                <i class="ph-fill ph-android-logo" style="font-size:2.5rem;color:#fff;"></i>
+            </div>
+
+            <h3 style="font-size:1.5rem;font-weight:700;margin-bottom:0.5rem;color:#fff;">
+                Get Postify Beta
+            </h3>
+
+            <p style="color:#94a3b8;font-size:0.875rem;margin-bottom:1.5rem;">
+                Experience the future of peaceful social media.
+            </p>
+
+            <div style="width:100%;background:#050816;border-radius:0.75rem;padding:1rem;margin-bottom:1.5rem;display:flex;justify-content:space-between;align-items:center;border:1px solid rgba(255,255,255,0.05);font-size:0.875rem;">
+                <div style="text-align:left;">
+                    <div style="color:#64748b;">Version</div>
+                    <div style="font-family:monospace;color:#fff;">v0.9.4 Beta</div>
                 </div>
+                <div style="text-align:right;">
+                    <div style="color:#64748b;">Size</div>
+                    <div style="font-family:monospace;color:#fff;">24.5 MB</div>
+                </div>
+            </div>
+
+            <!-- DOWNLOAD BUTTON -->
+            <a href="app/Postify-App.apk" download style="width:100%;text-decoration:none;">
+                <button style="width:100%;padding:1rem;border-radius:0.75rem;background:#fff;color:#000;font-weight:700;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:0.5rem;transition:all 0.2s;font-size:0.875rem;"
+                    onmouseover="this.style.background='#00d9ff';this.style.boxShadow='0 0 20px rgba(138,190,224,0.5)'"
+                    onmouseout="this.style.background='#fff';this.style.boxShadow=''">
+                    
+                    <i class="ph ph-download-simple" style="font-size:1.25rem;"></i>
+                    Download APK Now
+                </button>
+            </a>
+
+            <div style="margin-top:1rem;display:flex;align-items:center;gap:0.5rem;font-size:0.75rem;color:#00d9ff;justify-content:center;">
+                <i class="ph-fill ph-shield-check"></i> Verified Secure Build
+            </div>
+
+        </div>
+    </div>
+</div>
             </div>
         </div>
     </section>

@@ -1,4 +1,6 @@
-// ======= POPUP FUNCTIONS ======= 
+// ======= MAIN FUNCTIONALITY =======
+
+// ======= POPUP FUNCTIONS =======
 function openPopup(popupId) {
     const overlay = document.getElementById('popup-overlay');
     const popup = document.getElementById(popupId);

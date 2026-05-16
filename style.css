@@ -4,9 +4,12 @@ body {
     color: #ffffff;
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
+    -webkit-touch-callout: none;
 }
 
-.glass-panel {
+
+
+
     background: rgba(255, 255, 255, 0.02);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
@@ -61,6 +64,7 @@ body {
     height: 650px;
     margin: 0 auto;
 }
+
 .phone-body {
     width: 100%;
     height: 100%;
@@ -242,3 +246,11 @@ body {
 html {
     scroll-behavior: smooth;
 }
+
+
+
+
+
+
+
+
